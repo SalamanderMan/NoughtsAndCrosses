@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html ng-app="noughtsAndCrossesApp">
+<head>
+
+    <title>Noughts and Crosses</title>
+    <link rel="stylesheet" href="testcss.css">
+    <script src="/angular/angular.min.js"></script>
+
+
+</head>
+
+<body ng-controller="noughtsAndCrossesController" >
+
+
+
+<table id="board">
+
+    <table>
+        <tr>
+            <td ng-click="squareSelection">Table Cell</td>
+            <td>Table Cell</td>
+            <td>Table Cell</td>
+        </tr>
+        <tr>
+            <td>Table Cell</td>
+            <td>Table Cell</td>
+            <td>Table Cell</td>
+        </tr>
+        <tr>
+            <td>Table Cell</td>
+            <td>Table Cell</td>
+            <td>Table Cell</td>
+        </tr>
+    </table>
+
+
+</table>
+
++<button ng-click="displayOutCome()"> Display Outcome</button>
++{{gameModel}}
+<script src="scripts/built.js"></script>
+
+</body>
+</html>
