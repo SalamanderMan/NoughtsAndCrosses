@@ -38,7 +38,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-concat');
-    grunt.loadNpmTasks('grunt-contrib-cssmin');
+
 
     grunt.registerTask('nostart',['jshint','clean:all','concat','copy','less' ]);
     grunt.registerTask('default',['nostart','server', 'watch']);
