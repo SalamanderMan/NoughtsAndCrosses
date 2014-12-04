@@ -18,7 +18,7 @@ module.exports = function(grunt) {
         watch: fileWatchTask,
         less: lessTask,
         server: expressTask,
-        concat: concatTask,
+        concat: concatTask
 
     });
 
