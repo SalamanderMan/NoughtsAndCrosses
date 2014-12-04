@@ -17,7 +17,8 @@ $scope.gameModel = gameModel;
         $http(serverPost).success(function (data) {
             $scope.gameMode = data;
         });
-    }});
+    };
+    });
 
     $scope.makeMove = function (squareNumber) {
         serverPost.url = 'http://noughtsAndCrosses.cloudapp.net:35000/api/v1.0/makemove';
