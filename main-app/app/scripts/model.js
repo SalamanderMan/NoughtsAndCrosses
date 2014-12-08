@@ -2,7 +2,7 @@
  * Created by andrew.welsh on 04/12/2014.
  */
 
-noughtsAndCrossesApp.factory ('gameModel', function($http) {
+angular.Module = noughtsAndCrossesApp.factory('gameModel', function ($http) {
 
     return {
         outcome: 'continue',
@@ -10,6 +10,7 @@ noughtsAndCrossesApp.factory ('gameModel', function($http) {
         winner: 0,
         player1: 'random',
         player2: 'random',
+        useStrict: 'true',
 
         serverPost: {
             method: 'post',
@@ -17,7 +18,7 @@ noughtsAndCrossesApp.factory ('gameModel', function($http) {
             'withCredentials': 'true',
 
             header: {
-                'content-type': 'application/json;charset=UTF-8'
+                'content-type': 'application/js;charset=UTF-8'
             },
             data: ''
 
@@ -29,8 +30,10 @@ noughtsAndCrossesApp.factory ('gameModel', function($http) {
             me.serverPost.data = {'player1': me.player1, 'player2': me.player2};
             $http(me.serverPost)
 
-                .success(function(data) {
+                .success(function (data) {
                     me.response = data.response;
                 });
-        }}});
+        }
+    };
+});
 
