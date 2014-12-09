@@ -18,6 +18,13 @@ module.exports =  {
             src:'angular/*',
             dest: '.build/main-app/app',
             expand:true
+        },
+
+        script:{
+            cwd:'',
+            src:'scripts/*',
+            dest: '.build/main-app/scripts',
+            expand:true
         }
 };
 

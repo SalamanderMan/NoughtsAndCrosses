@@ -1,4 +1,4 @@
-noughtsAndCrossesApp.controller('noughtsAndCrossesController', function ($scope,$http,gameModel){
+angular.Module('noughtsAndCrossesApp').controller('noughtsAndCrossesController', function ($scope,$http,gameModel){
 $scope.gameModel = gameModel;
 
     var serverPost = {

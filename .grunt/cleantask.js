@@ -6,6 +6,7 @@ module.exports =  {
     images: ['.build/main-app/app/images'],
     css: ['.build/main-app/app/css'],
     html:['.build/main-app/app/index.html']
+
 };
 
 
