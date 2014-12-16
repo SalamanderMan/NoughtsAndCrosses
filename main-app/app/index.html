@@ -3,7 +3,7 @@
 <head>
 
     <title>Noughts and Crosses</title>
-    <link rel="stylesheet" href="mainStyle.css">
+    <link rel="stylesheet" href="/css/main.min.css">
     <script src="/angular/angular.min.js"></script>
 
 
@@ -13,10 +13,10 @@
 
 
 
-<h2> {{  }}</h2>
+<h2> {{ gameModel.gameState }} </h2>
 
 +<button ng-click="displayOutCome()"> Display Outcome</button>
-+{{gameModel}}
+{{ gameModel.gameState  }}
 <script src="scripts/built.js"></script>
 
 </body>
