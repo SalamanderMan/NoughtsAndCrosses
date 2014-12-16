@@ -4,16 +4,17 @@
 
 angular.Module = noughtsAndCrossesApp.factory('noughtsAndCrossesApp', function ($http) {
 
-       /* var noughtsAndCrossesApp = function () {
+        var noughtsAndCrossesApp = function () {
+            var noughtsAndCrosses = {
             method: 'post',
             url: '',
             'withCredentials': 'true',
 
             headers: {
-                'content-type': 'application/js:charset=UTF8'
+                'content-type' : 'application/js:charset=UTF8'
             },
             data: ''
-        }; */
+        }};
 
 angular.Module = newGame.service('newGame', function () {
 
