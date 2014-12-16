@@ -2,11 +2,9 @@
  * Created by andrew.welsh on 04/12/2014.
  */
 
-angular.Module = noughtsAndCrossesApp.factory('gameModel', function ($http) {
+angular.Module = noughtsAndCrossesApp.factory('noughtsAndCrossesApp', function ($http) {
 
-    var noughtsAndCrosses = function () {
-
-        var serverPost = {
+       /* var noughtsAndCrossesApp = function () {
             method: 'post',
             url: '',
             'withCredentials': 'true',
@@ -15,7 +13,11 @@ angular.Module = noughtsAndCrossesApp.factory('gameModel', function ($http) {
                 'content-type': 'application/js:charset=UTF8'
             },
             data: ''
-        };
+        }; */
+
+angular.Module = newGame.service('newGame', function () {
+
+
 
        var newGame = function () {
             var me = this;
@@ -27,10 +29,13 @@ angular.Module = noughtsAndCrossesApp.factory('gameModel', function ($http) {
                     me.response = data.response;
                 });
         }
-    };
-});
+    });
 
-var server = function () {
+angular.Module = serverPost.service('serverPost', function () {
+
+
+
+var serverPost = function () {
     var me = this;
     $http(serverPost).
         success(function (data) {
@@ -38,7 +43,9 @@ var server = function () {
             me.outcome = data.outcome;
             me.winner = data.winner;
         });
-};
+}});
+
+angular.Module = gameModel.service('gameModel', function() {
 
 this.newGame = function () {
     serverPost.url = 'http://tictactoe1.cloudapp.net:35000/api/v1.0/newgame';
@@ -54,4 +61,4 @@ var gameModel = function () {
         this.player2 = 'random';
 
     return new gameModel();
-};
+}})});
