@@ -4,16 +4,18 @@
 
         //TODO: Sort this out......
 
-        var noughtsAndCrosses = {
+        var noughtsAndCrosses = function (url,data) {
+            var serverCall = {
+
             method: 'post',
-            url: '',
+            url: url,
             'withCredentials': 'true',
 
             headers: {
                 'content-type': 'application/js:charset=UTF8'
             },
-            data: ''
-        };
+            data: data
+        };};
 
         var serverPost = function () {
             var me = this;
@@ -27,6 +29,7 @@
 
         this.newGame = function () {
             var me = this;
+
             me.serverPost.url = 'http://tictactoe1.cloudapp.net:35000/api/v1.0/newgame';
             me.serverPost.data = {'player1': me.player1, 'player2': me.player2};
             $http(me.serverPost)
