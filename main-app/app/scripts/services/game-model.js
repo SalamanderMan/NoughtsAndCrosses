@@ -22,8 +22,7 @@
 
             this.makeMove = function (squareNumber) {
                 //TODO: Call API Wrapper to make service call
-                //gameApi.makeMove(0)
-                console.log('made a move');
+                 gameApi.makeMove(this.currentPlayer ,squareNumber);
             };
 
 
