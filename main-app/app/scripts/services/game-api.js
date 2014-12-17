@@ -1,46 +1,33 @@
 (function () {
+    'use strict';
     angular.module('noughtsAndCrossesApp')
-        .service('gameApi', function () {
+        .service('gameApi', function ($http, $q) {
 
         //TODO: Sort this out......
 
-        var noughtsAndCrosses = function (url,data) {
-            var serverCall = {
+            var ServerCallInformation = function(url, data){
+                this.method = 'post';
+                this.withCredentials='true';
+                this.headers = {  'content-type' : 'application/json' };
+                this.data = data;
+                this.url= url;
+            };
 
-            method: 'post',
-            url: url,
-            'withCredentials': 'true',
+            this.newGame = function (player1, player2) {
+                console.log('calling new game');
+                var deferred = $q.defer();
+                var serverCallInformation = new ServerCallInformation('http://EUTAVEG-01.tombola.emea:35000/api/v1.0/newgame', {player1: player1, player2:player2 });
+                $http(serverCallInformation)
+                    .success(function (data) {
+                        //TODO: pre-convert the data
+                        deferred.resolve(data);
+                    })
+                    .error(function(data, status){
+                        deferred.reject(data, status);
+                    });
 
-            headers: {
-                'content-type': 'application/js:charset=UTF8'
-            },
-            data: data
-        };
-            $http(serverCall).success(function(){}).error(function () {
-
-            });
-
-
-
-        var serverPost = function () {
-            var me = this;
-            $http(serverPost).
-                success(function (data) {
-                    me.gameboard = data.gameboard;
-                    me.outcome = data.outcome;
-                    me.winner = data.winner;
-                });
-        };
-
-        this.newGame = function () {
-            var me = this;
-
-            me.serverPost.url = 'http://tictactoe1.cloudapp.net:35000/api/v1.0/newgame';
-            me.serverPost.data = {'player1': me.player1, 'player2': me.player2};
-            $http(me.serverPost)
-                .success(function (data) {
-                    me.response = data.response;
-                });
-        };
-    };});
+                console.log('new game ended');
+                return deferred.promise;
+            };
+        });
 }());

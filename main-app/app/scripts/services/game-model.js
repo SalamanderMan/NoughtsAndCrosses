@@ -1,6 +1,6 @@
 (function () {'use strict';
     angular.module('noughtsAndCrossesApp')
-        .service('gameModel', function () {
+        .service('gameModel', function (gameApi) {
 
             this.outcome = 'continue';
             this.gameState = '000000001';
@@ -10,14 +10,22 @@
             this.currentPlayer = 1;
 
             this.newGame = function () {
-                //TODO: Call API Wrapper to make service call
-                console.log('make movegame');
+                var me = this;
+                gameApi.newGame(this.player1, this.player2)
+                    .then(function(data){
+                        me.gameState = data.gameboard;
+                    },
+                    function(data, status){
+                        alert('Server Error:' + status + ' information ' + data);
+                    });
             };
 
             this.makeMove = function (squareNumber) {
                 //TODO: Call API Wrapper to make service call
+                //gameApi.makeMove(0)
                 console.log('made a move');
             };
+
 
             //TODO: RE-instate later
             /*var cyclePlayerChoice = function (currentPlayer){
