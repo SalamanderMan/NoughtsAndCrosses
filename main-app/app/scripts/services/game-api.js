@@ -15,7 +15,12 @@
                 'content-type': 'application/js:charset=UTF8'
             },
             data: data
-        };};
+        };
+            $http(serverCall).success(function(){}).error(function () {
+
+            });
+
+
 
         var serverPost = function () {
             var me = this;
@@ -37,5 +42,5 @@
                     me.response = data.response;
                 });
         };
-    });
+    };});
 }());

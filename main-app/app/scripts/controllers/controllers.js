@@ -5,20 +5,21 @@
         $scope.gameModel = gameModel;
 
         $scope.newGame = function () {
-            console.log('todo new game');
             gameModel.newGame();
         };
 
         $scope.makeMove = function (squareNumber) {
-            console.log('make movegame');
+            gameModel.makeMove(squareNumber);
         };
-            $scope.togglePlayerChoice1 = function () {
-                gameModel.togglePlayerChoice1();
-            };
 
-            $scope.togglePlayerChoice2 = function () {
-                gameModel.togglePlayerChoice2();
-            };
+        //TODO: Reinstate :ater
+        /*$scope.togglePlayerChoice1 = function () {
+            gameModel.togglePlayerChoice1();
+        };
+
+        $scope.togglePlayerChoice2 = function () {
+            gameModel.togglePlayerChoice2();
+        };*/
     });
 }());
 
