@@ -12,7 +12,7 @@
             gameModel.makeMove(squareNumber);
         };
 
-        //TODO: Reinstate :ater
+        //TODO: Reinstate :later
         /*$scope.togglePlayerChoice1 = function () {
             gameModel.togglePlayerChoice1();
         };
