@@ -13,13 +13,13 @@
         };
 
         //TODO: Reinstate :later
-        /*$scope.togglePlayerChoice1 = function () {
+        $scope.togglePlayerChoice1 = function () {
             gameModel.togglePlayerChoice1();
         };
 
         $scope.togglePlayerChoice2 = function () {
             gameModel.togglePlayerChoice2();
-        };*/
+        };
     });
 }());
 

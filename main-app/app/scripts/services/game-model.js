@@ -11,7 +11,7 @@
 
             this.newGame = function () {
                 var me = this;
-                gameApi.newGame(this.player1, this.player2)
+                gameApi.newGame(me.player1, me.player2)
                     .then(function(data){
                         me.gameState = data.gameboard;
                     },
@@ -21,13 +21,22 @@
             };
 
             this.makeMove = function (squareNumber) {
-                //TODO: Call API Wrapper to make service call
-                 gameApi.makeMove(this.currentPlayer ,squareNumber);
+
+                var me = this;
+                 gameApi.makeMove(me.currentPlayer ,squareNumber)
+                     .then(function(data){
+                         me.gameState = data.gameboard;
+                     },
+                     function(data, status){
+                         alert('Server Error:' + status + ' information ' + data);
+                     });
             };
 
 
+
+
             //TODO: RE-instate later
-            /*var cyclePlayerChoice = function (currentPlayer){
+            var cyclePlayerChoice = function (currentPlayer){
                     if(currentPlayer === 'human') {
                         return 'random';
                     }
@@ -47,8 +56,8 @@
                 var me = this;
                 me.player2 = cyclePlayerChoice(me.player2);
 
-            };*/
-    });
+            };
+     });
 }());
 
 
