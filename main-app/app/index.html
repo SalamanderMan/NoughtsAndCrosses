@@ -18,6 +18,31 @@
 <button ng-click="newGame()">New Game</button>
 
 <button ng-click="makeMove(6)">Make Move</button>
+
+<button ng-click="togglePlayerChoice1()">Player One Is {{togglePlayerChoice1()}}</button>
+
+<button ng-click="togglePlayerChoice2()">Player Two Is {{togglePlayerChoice2()}}</button>
+<table>
+    <tr>
+        <td ng-click="makeMove(0)"></td>
+        <td ng-click="makeMove(1)"></td>
+        <td ng-click="makeMove(2)"></td>
+    </tr>
+    <tr>
+        <td ng-click="makeMove(3)"></td>
+        <td ng-click="makeMove(4)"></td>
+        <td ng-click="makeMove(5)"></td>
+    </tr>
+    <tr>
+        <td ng-click="makeMove(6)"></td>
+        <td ng-click="makeMove(7)"></td>
+        <td ng-click="makeMove(8)"></td>
+    </tr>
+</table>
+
+
+
+
 <script src="scripts/built.js"></script>
 
 <!--<button ng-click="togglePlayerChoice1(gameModel.player1)"> {{ gameModel.player1 }} </button>-->

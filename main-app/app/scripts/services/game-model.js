@@ -36,7 +36,7 @@
 
 
             //TODO: RE-instate later
-            /*var cyclePlayerChoice = function (currentPlayer){
+            var cyclePlayerChoice = function (currentPlayer){
                     if(currentPlayer === 'human') {
                         return 'random';
                     }
@@ -56,7 +56,7 @@
                 var me = this;
                 me.player2 = cyclePlayerChoice(me.player2);
 
-            };*/
+            };
      });
 }());
 
