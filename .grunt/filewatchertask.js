@@ -2,7 +2,7 @@
 module.exports =  {
 
     scripts: {
-        files:['main-app/app/scripts/*.js',  'main-app/app/scripts/services/*.js','main-app/app/scripts/controllers/*.js'],
+        files:['main-app/app/scripts/*.js',  'main-app/app/scripts/services/*.js','main-app/app/scripts/filters/*.js','main-app/app/scripts/controllers/*.js'],
         tasks:['jshint','clean:scripts','concat:scripts'],
         options:{
             spawn:false
