@@ -1,6 +1,8 @@
 angular.module('noughtsAndCrossesApp')
-.filter('playerNumberToGamePiece', function(){
+    .filter('playerNumberToGamePiece', function () {
         return function () {
             return 'X';
+
         };
-    });
+    }
+);
