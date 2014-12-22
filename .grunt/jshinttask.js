@@ -3,7 +3,7 @@ module.exports =  {
 
     script: {
         cwd: '',
-        src: ['main-app/app/scripts/*.js',  'main-app/app/scripts/services/*.js','main-app/app/scripts/controllers/*.js'],
+        src: ['main-app/app/scripts/*.js',  'main-app/app/scripts/services/*.js','main-app/app/scripts/filters/*.js','main-app/app/scripts/controllers/*.js'],
         dest: '.build/',
         expand: true
     },

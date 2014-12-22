@@ -3,7 +3,7 @@
         .service('gameModel', function (gameApi) {
 
             this.outcome = 'continue';
-            this.gameState = '000000001';
+            this.gameState = '000000000';
             this.winner = 0;
             this.player1 = 'human';
             this.player2 = 'random';
@@ -36,7 +36,7 @@
 
 
             //TODO: RE-instate later
-            var cyclePlayerChoice = function (currentPlayer){
+            /*var cyclePlayerChoice = function (currentPlayer){
                     if(currentPlayer === 'human') {
                         return 'random';
                     }
@@ -56,7 +56,7 @@
                 var me = this;
                 me.player2 = cyclePlayerChoice(me.player2);
 
-            };
+            };*/
      });
 }());
 
