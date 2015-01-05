@@ -32,11 +32,15 @@
                 <td ng-click="makeMove(8)">{{ gameModel.gameState[8] | playerNumberToGamePiece : gameModel }}</td>
             </tr>
         </table>
-        <aside>
+        <!--<aside>-->
             <button ng-click="newGame()">New Game</button>
 
             <button ng-click="makeMove(6)">Make Move</button>
-        </aside>
+
+            <button ng-click="togglePlayerChoice1()">Player 1 is {{gameModel.player1}}</button>
+
+            <button ng-click="togglePlayerChoice2()">Player 2 is {{gameModel.player2}}</button>
+        <!--</aside>-->
     </div>
 </div>
 
