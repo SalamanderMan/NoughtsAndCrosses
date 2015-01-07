@@ -51,15 +51,9 @@
 
             };
 
-            this.player2IsHuman = function () {
-                if (player2 == 'human') {
-                    console.log ('Calling function');
-                    makeMove();
-                    console.log ('Player 2 is human');
-                }
 
-            };
-            /*;*/
+
+
 
         });
 }());

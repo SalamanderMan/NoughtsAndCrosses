@@ -35,28 +35,40 @@
 
 
             //TODO: RE-instate later
-            var cyclePlayerChoice = function (currentPlayer){
-             if(currentPlayer === 'human') {
-             return 'random';
-             }
-             else if (currentPlayer === 'random') {
-             return 'pre-trained';
-             }
-             return 'human';
-             };
+            var cyclePlayerChoice = function (currentPlayer) {
+                if (currentPlayer === 'human') {
+                    return 'random';
+                }
+                else if (currentPlayer === 'random') {
+                    return 'pre-trained';
+                }
+                return 'human';
+            };
 
-             this.togglePlayerChoice1 = function () {
-             var me = this;
-             me.player1 = cyclePlayerChoice(me.player1);
+            this.togglePlayerChoice1 = function () {
+                var me = this;
+                me.player1 = cyclePlayerChoice(me.player1);
 
-             };       //todo: make move.....
+            };       //todo: make move.....
 
-             this.togglePlayerChoice2 = function () {
-             var me = this;
-             me.player2 = cyclePlayerChoice(me.player2);
+            this.togglePlayerChoice2 = function () {
+                var me = this;
+                me.player2 = cyclePlayerChoice(me.player2);
 
-             };
+            };
+
+            this.currentPlayer = function () {
+                if (this.player1 !== 'human') {
+                    return;
+                }
+                if (this.player2 !== 'human') {
+                    return;
+                }
+                this.currentPlayer = this.currentPlayer === 1 ? 2 : 1;
+            };
+
         });
-}());
+        }());
+
 
 
