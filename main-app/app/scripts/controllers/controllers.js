@@ -10,6 +10,7 @@
 
         $scope.makeMove = function (squareNumber) {
             gameModel.makeMove(squareNumber);
+            gameModel.currentPlayer();
         };
 
         $scope.player2IsHuman = function () {

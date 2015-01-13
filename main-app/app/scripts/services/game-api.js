@@ -1,7 +1,7 @@
 (function () {
     'use strict';
     angular.module('noughtsAndCrossesApp')
-        .service('gameApi', function ($http, $q) {
+        .service('gameApi', function ($http, $q, gameModel) {
 
             //TODO: Sort this out......
 
@@ -36,13 +36,13 @@
 
                 var deferred = $q.defer();
                 var serverCallInformation = new ServerCallInformation('http://EUTAVEG-01.tombola.emea:35000/api/v1.0/makemove', {
-                    playerNumber: playerNumber,
+                    playerNumber: gameModel.currentPlayer,
                     chosenSquare: squareNumber
                 });
                 $http(serverCallInformation)
                     .success(function (data) {
                         deferred.resolve(data);
-                        /*console.log (data);*/
+                        console.log (data);
                     })
                     .error(function (data, status) {
                         deferred.reject(data, status);
@@ -50,10 +50,5 @@
                 return deferred.promise;
 
             };
-
-
-
-
-
         });
 }());
