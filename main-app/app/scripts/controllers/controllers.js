@@ -13,9 +13,7 @@
             gameModel.currentPlayer();
         };
 
-        $scope.player2IsHuman = function () {
-                gameModel.player2IsHuman();
-            };
+
 
         //TODO: Reinstate :later
         $scope.togglePlayerChoice1 = function () {

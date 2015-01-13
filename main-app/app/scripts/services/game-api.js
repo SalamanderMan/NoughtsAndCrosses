@@ -36,7 +36,7 @@
 
                 var deferred = $q.defer();
                 var serverCallInformation = new ServerCallInformation('http://EUTAVEG-01.tombola.emea:35000/api/v1.0/makemove', {
-                    playerNumber: gameModel.currentPlayer,
+                    playerNumber: playerNumber,
                     chosenSquare: squareNumber
                 });
                 $http(serverCallInformation)
