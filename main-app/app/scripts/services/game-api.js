@@ -13,13 +13,8 @@
                 this.url = url;
             };
 
-            this.newGame = function (player1, player2) {
+            var serverCall = function (serverCallInformation) {
                 var deferred = $q.defer();
-                var serverCallInformation = new ServerCallInformation('http://EUTAVEG-01.tombola.emea:35000/api/v1.0/newgame', {
-                    player1: player1,
-                    player2: player2
-                });
-
                 $http(serverCallInformation)
                     .success(function (data) {
                         //TODO: pre-convert the data
@@ -29,31 +24,29 @@
                         deferred.reject(data, status);
                     });
                 return deferred.promise;
+
+            };
+
+            this.newGame = function (player1, player2) {
+
+                var serverCallInformation = new ServerCallInformation('http://EUTAVEG-01.tombola.emea:35000/api/v1.0/newgame', {
+                    player1: player1,
+                    player2: player2
+
+                });
+               return serverCall (serverCallInformation);
+
             };
 
             this.makeMove = function (playerNumber, squareNumber) {
 
-
-                var deferred = $q.defer();
                 var serverCallInformation = new ServerCallInformation('http://EUTAVEG-01.tombola.emea:35000/api/v1.0/makemove', {
-                    playerNumber: playerNumber,
+                    playerNumber: 1,
                     chosenSquare: squareNumber
                 });
-                $http(serverCallInformation)
-                    .success(function (data) {
-                        deferred.resolve(data);
-                        /*console.log (data);*/
-                    })
-                    .error(function (data, status) {
-                        deferred.reject(data, status);
-                    });
-                return deferred.promise;
+
+                return serverCall(serverCallInformation);
 
             };
-
-
-
-
-
         });
 }());
