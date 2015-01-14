@@ -13,8 +13,6 @@
             gameModel.currentPlayer();
         };
 
-
-
         //TODO: Reinstate :later
         $scope.togglePlayerChoice1 = function () {
             gameModel.togglePlayerChoice1();
