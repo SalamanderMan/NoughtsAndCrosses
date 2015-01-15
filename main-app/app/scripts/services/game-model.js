@@ -57,15 +57,19 @@
 
             };
 
-            this.currentPlayer = function () {
-                if (this.player1 !== 'human') {
+
+            this.currentPlayer = (this.player1 && this.player2 !=='human'); 
+
+
+            /*this.currentPlayer = function () {
+                if (this.player1 == 'human') {
                     return;
                 }
-                if (this.player2 !== 'human') {
+                else if (this.player2 == 'human') {
                     return;
                 }
                 this.currentPlayer = this.currentPlayer === 1 ? 2 : 1;
-            };
+            };*/
 
         });
         }());
