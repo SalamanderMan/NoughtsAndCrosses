@@ -19,7 +19,16 @@
                     function (data, status) {
                         alert('Server Error:' + status + ' information ' + data);
                     });
-            };
+
+           /* if (this.player2 == 'human') return currentPlayer == player2;
+
+
+
+            *//*if (this.player1 == 'human') return currentPlayer = player1;*/
+        };
+
+
+
 
             this.makeMove = function (squareNumber) {
 
@@ -51,6 +60,7 @@
 
             };       //todo: make move.....
 
+            console.log(cyclePlayerChoice());
             this.togglePlayerChoice2 = function () {
                 var me = this;
                 me.player2 = cyclePlayerChoice(me.player2);
@@ -58,15 +68,22 @@
             };
 
             this.currentPlayer = function () {
-                if (this.player1 !== 'human') {
-                    return;
+                if (this.player1 == 'human') {
+                    return player1;
                 }
-                if (this.player2 !== 'human') {
-                    return;
+                else if (this.player2 == 'human') {
+                    return player2;
                 }
-                this.currentPlayer = this.currentPlayer === 1 ? 2 : 1;
+                this.currentPlayer = this.currentPlayer == 1 ? 2 : 1;
             };
 
+            /*var player2IsHuman = function (currentPlayer) {
+                if (player2 == 'human') {
+                     currentPlayer = player2;
+
+                }
+            };
+            console.log(player2IsHuman());*/
         });
         }());
 
