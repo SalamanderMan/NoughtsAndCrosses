@@ -10,21 +10,43 @@
             this.player2 = 'random';
             this.currentPlayer = 1;
 
+            var cyclePlayerChoice = function (currentPlayer) {
+                if (currentPlayer === 'human') {
+                    return 'random';
+                }
+                else if (currentPlayer === 'random') {
+                    return 'pre-trained';
+                }
+                return 'human';
+            };
+
+
+            this.toggleCurrentPlayer = function () {
+                if (this.player1 == 'human') {
+                    return;
+                }
+                else if (this.player2 == 'human') {
+                    return;
+                }
+                this.toggleCurrentPlayer = this.toggleCurrentPlayer() == 1 ? 2 : 1;
+            };
+
             this.newGame = function () {
                 var me = this;
                 gameApi.newGame(me.player1, me.player2)
                     .then(function (data) {
+                        /*toggleCurrentPlayer();*/
                         me.gameState = data.gameboard;
                     },
                     function (data, status) {
                         alert('Server Error:' + status + ' information ' + data);
                     });
 
-            if (this.player2 === 'human') {return currentPlayer == player2;
+            if (this.player2 === 'human') {/*return currentPlayer == player2;*/
 
                 } else {
 
-                return currentPlayer == player1;
+                /*return currentPlayer == player1;*/
             }};
 
 
@@ -40,6 +62,7 @@
                 var me = this;
                 gameApi.makeMove(me.currentPlayer, squareNumber)
                     .then(function (data) {
+                        currentPlayer(toggleCurrentPlayer());
                         me.gameState = data.gameboard;
                     },
                     function (data, status) {
@@ -49,15 +72,7 @@
 
 
             //TODO: RE-instate later
-            var cyclePlayerChoice = function (currentPlayer) {
-                if (currentPlayer === 'human') {
-                    return 'random';
-                }
-                else if (currentPlayer === 'random') {
-                    return 'pre-trained';
-                }
-                return 'human';
-            };
+
 
             this.togglePlayerChoice1 = function () {
                 var me = this;
@@ -72,15 +87,7 @@
 
             };
 
-            this.currentPlayer = function () {
-                if (this.player1 == 'human') {
-                    return;
-                }
-                else if (this.player2 == 'human') {
-                    return;
-                }
-                this.currentPlayer = this.currentPlayer == 1 ? 2 : 1;
-            };
+
 
 /*            *//*var player2IsHuman = function (currentPlayer) {
                 if (player2 == 'human') {
