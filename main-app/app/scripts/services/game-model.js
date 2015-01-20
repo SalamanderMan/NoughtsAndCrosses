@@ -35,7 +35,7 @@
                 var me = this;
                 gameApi.newGame(me.player1, me.player2)
                     .then(function (data) {
-                        /*toggleCurrentPlayer();*/
+                        toggleCurrentPlayer();
                         me.gameState = data.gameboard;
                     },
                     function (data, status) {
@@ -70,15 +70,11 @@
                     });
             };
 
-
-            //TODO: RE-instate later
-
-
             this.togglePlayerChoice1 = function () {
                 var me = this;
                 me.player1 = cyclePlayerChoice(me.player1);
 
-            };       //todo: make move.....
+            };
 
             console.log(cyclePlayerChoice());
             this.togglePlayerChoice2 = function () {
@@ -86,16 +82,6 @@
                 me.player2 = cyclePlayerChoice(me.player2);
 
             };
-
-
-
-/*            *//*var player2IsHuman = function (currentPlayer) {
-                if (player2 == 'human') {
-                     currentPlayer = player2;
-
-                }
-            };*//*
-            console.log(player2IsHuman());*/
         });
         }());
 
