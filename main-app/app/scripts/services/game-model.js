@@ -20,12 +20,17 @@
                         alert('Server Error:' + status + ' information ' + data);
                     });
 
-           /* if (this.player2 == 'human') return currentPlayer == player2;
+            if (this.player2 === 'human') {return currentPlayer == player2;
+
+                } else {
+
+                return currentPlayer == player1;
+            }};
 
 
 
-            *//*if (this.player1 == 'human') return currentPlayer = player1;*/
-        };
+            /*if (this.player1 == 'human') return currentPlayer = player1;
+        };*/
 
 
 
@@ -69,20 +74,20 @@
 
             this.currentPlayer = function () {
                 if (this.player1 == 'human') {
-                    return player1;
+                    return;
                 }
                 else if (this.player2 == 'human') {
-                    return player2;
+                    return;
                 }
                 this.currentPlayer = this.currentPlayer == 1 ? 2 : 1;
             };
 
-            /*var player2IsHuman = function (currentPlayer) {
+/*            *//*var player2IsHuman = function (currentPlayer) {
                 if (player2 == 'human') {
                      currentPlayer = player2;
 
                 }
-            };
+            };*//*
             console.log(player2IsHuman());*/
         });
         }());
