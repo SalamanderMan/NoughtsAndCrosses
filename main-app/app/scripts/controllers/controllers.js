@@ -10,7 +10,7 @@
 
         $scope.makeMove = function (squareNumber) {
             gameModel.makeMove(squareNumber);
-            gameModel.currentPlayer();
+            gameModel.toggleCurrentPlayer();
         };
 
         //TODO: Reinstate :later
