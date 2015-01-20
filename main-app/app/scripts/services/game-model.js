@@ -62,7 +62,7 @@
                 var me = this;
                 gameApi.makeMove(me.currentPlayer, squareNumber)
                     .then(function (data) {
-                        currentPlayer(toggleCurrentPlayer());
+
                         me.gameState = data.gameboard;
                     },
                     function (data, status) {
