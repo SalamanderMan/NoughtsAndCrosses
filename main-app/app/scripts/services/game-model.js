@@ -42,17 +42,7 @@
                         alert('Server Error:' + status + ' information ' + data);
                     });
 
-            if (this.player2 === 'human') {/*return currentPlayer == player2;*/
 
-                } else {
-
-                /*return currentPlayer == player1;*/
-            }};
-
-
-
-            /*if (this.player1 == 'human') return currentPlayer = player1;
-        };*/
 
 
 
@@ -82,8 +72,8 @@
                 me.player2 = cyclePlayerChoice(me.player2);
 
             };
-        });
-        }());
+        };
+        }())});
 
 
 
