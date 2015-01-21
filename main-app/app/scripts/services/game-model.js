@@ -22,21 +22,26 @@
 
 
             this.toggleCurrentPlayer = function () {
-                if (this.player1 == 'human') {
-                    return;
+                if(this.player1 ==='human' && this.player2 ==='human'){
+                    this.currentPlayer = this.currentPlayer == 1 ? 2 : 1;
                 }
-                else if (this.player2 == 'human') {
-                    return;
-                }
-                this.toggleCurrentPlayer = this.currentPlayer() == 1 ? 2 : 1;
             };
 
+            this.setStartingPlayer = function () {
+                if (this.player1 === 'human') {
+                    this.currentPlayer = 1;
+                } else if (this.player2 === 'human') {
+                    this.currentPlayer = 2;
+                }
+            };
 
             this.newGame = function () {
                 var me = this;
                 gameApi.newGame(me.player1, me.player2)
                     .then(function (data) {
-                        this.toggleCurrentPlayer();
+                        console.log('Feckin perkele');
+
+                        me.setStartingPlayer();
                         me.gameState = data.gameboard;
                     },
                     function (data, status) {
@@ -45,11 +50,10 @@
             };
 
             this.makeMove = function (squareNumber) {
-
                 var me = this;
                 gameApi.makeMove(me.currentPlayer, squareNumber)
                     .then(function (data) {
-
+                        me.toggleCurrentPlayer();
                         me.gameState = data.gameboard;
                     },
                     function (data, status) {
