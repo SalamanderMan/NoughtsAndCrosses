@@ -22,37 +22,38 @@
 
 
             this.toggleCurrentPlayer = function () {
-                if (this.player1 == 'human') {
-                    return;
+                if(this.player1 ==='human' && this.player2 ==='human'){
+                    this.currentPlayer = this.currentPlayer == 1 ? 2 : 1;
                 }
-                else if (this.player2 == 'human') {
-                    return;
+            };
+
+            this.setStartingPlayer = function () {
+                if (this.player1 === 'human') {
+                    this.currentPlayer = 1;
+                } else if (this.player2 === 'human') {
+                    this.currentPlayer = 2;
                 }
-                this.toggleCurrentPlayer = this.toggleCurrentPlayer() == 1 ? 2 : 1;
             };
 
             this.newGame = function () {
                 var me = this;
                 gameApi.newGame(me.player1, me.player2)
                     .then(function (data) {
-                        toggleCurrentPlayer();
+                        console.log('Feckin perkele');
+
+                        me.setStartingPlayer();
                         me.gameState = data.gameboard;
                     },
                     function (data, status) {
                         alert('Server Error:' + status + ' information ' + data);
                     });
-
-
-
-
-
+            };
 
             this.makeMove = function (squareNumber) {
-
                 var me = this;
                 gameApi.makeMove(me.currentPlayer, squareNumber)
                     .then(function (data) {
-
+                        me.toggleCurrentPlayer();
                         me.gameState = data.gameboard;
                     },
                     function (data, status) {
@@ -66,14 +67,14 @@
 
             };
 
-            console.log(cyclePlayerChoice());
+
             this.togglePlayerChoice2 = function () {
                 var me = this;
                 me.player2 = cyclePlayerChoice(me.player2);
 
             };
-        };
-        }())});
+        });
+})();
 
 
 

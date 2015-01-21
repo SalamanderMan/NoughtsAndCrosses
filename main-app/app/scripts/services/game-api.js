@@ -41,7 +41,7 @@
             this.makeMove = function (playerNumber, squareNumber) {
 
                 var serverCallInformation = new ServerCallInformation('http://EUTAVEG-01.tombola.emea:35000/api/v1.0/makemove', {
-                    playerNumber: 1,
+                    playerNumber: playerNumber,
                     chosenSquare: squareNumber
                 });
 
