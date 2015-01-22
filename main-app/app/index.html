@@ -17,24 +17,25 @@
     <div>
         <table>
             <tr>
-                <td ng-click="makeMove(0)">{{ gameModel.gameState[0] | playerNumberToGamePiece : gameModel }}</td>
-                <td ng-click="makeMove(1)">{{ gameModel.gameState[1] | playerNumberToGamePiece : gameModel }}</td>
-                <td ng-click="makeMove(2)">{{ gameModel.gameState[2] | playerNumberToGamePiece : gameModel }}</td>
+                <td><img src="" class="gameSquare {{ gameModel.gameState[0] | playerNumberToGamePiece }}" ng-click="makeMove(0)"></td>
+                <td><img src="" class="gameSquare {{ gameModel.gameState[1] | playerNumberToGamePiece }}" ng-click="makeMove(1)"></td>
+                <td><img src="" class="gameSquare {{ gameModel.gameState[2] | playerNumberToGamePiece }}" ng-click="makeMove(2)"></td>
             </tr>
             <tr>
-                <td ng-click="makeMove(3)">{{ gameModel.gameState[3] | playerNumberToGamePiece : gameModel }}</td>
-                <td ng-click="makeMove(4)">{{ gameModel.gameState[4] | playerNumberToGamePiece : gameModel }}</td>
-                <td ng-click="makeMove(5)">{{ gameModel.gameState[5] | playerNumberToGamePiece : gameModel }}</td>
+                <td><img src="" class="gameSquare {{ gameModel.gameState[3] | playerNumberToGamePiece }}" ng-click="makeMove(3)"></td>
+                <td><img src="" class="gameSquare {{ gameModel.gameState[4] | playerNumberToGamePiece }}" ng-click="makeMove(4)"></td>
+                <td><img src="" class="gameSquare {{ gameModel.gameState[5] | playerNumberToGamePiece }}" ng-click="makeMove(5)"></td>
             </tr>
             <tr>
-                <td ng-click="makeMove(6)">{{ gameModel.gameState[6] | playerNumberToGamePiece : gameModel }}</td>
-                <td ng-click="makeMove(7)">{{ gameModel.gameState[7] | playerNumberToGamePiece : gameModel }}</td>
-                <td ng-click="makeMove(8)">{{ gameModel.gameState[8] | playerNumberToGamePiece : gameModel }}</td>
+                <td><img src="" class="gameSquare {{ gameModel.gameState[6] | playerNumberToGamePiece }}" ng-click="makeMove(6)"></td>
+                <td><img src="" class="gameSquare {{ gameModel.gameState[7] | playerNumberToGamePiece }}" ng-click="makeMove(7)"></td>
+                <td><img src="" class="gameSquare {{ gameModel.gameState[8] | playerNumberToGamePiece }}" ng-click="makeMove(8)"></td>
             </tr>
         </table>
         <!--<aside>-->
             <button ng-click="newGame()">New Game</button>
 
+            <!--<button square-selection-dir="square-selection-mod">Test Square</button>-->
 
             <button ng-click="togglePlayerChoice1()">Player 1 is {{gameModel.player1}}</button>
 
@@ -44,10 +45,6 @@
 </div>
 
 <script src="scripts/built.js"></script>
-
-<!--<button ng-click="togglePlayerChoice1(gameModel.player1)"> {{ gameModel.player1 }} </button>-->
-
-<!--<button ng-click="togglePlayerChoice2(gameModel.player2)"> {{ gameModel.player2 }} </button>-->
 
 </body>
 </html>

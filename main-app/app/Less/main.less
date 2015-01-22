@@ -1,3 +1,6 @@
+@gameSquareSize: 150px;
+@emphasisColor: #E7BD42;
+
 * {
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -8,17 +11,15 @@ body {
 
 table tr td {
   background-color: #000011;
-  /*color: #EF9CB5;*/
-  color: #6787f9;
-  height: 150px; width: 150px;
+  height: @gameSquareSize;
+  width: @gameSquareSize;
   border: solid;
-  border-color: #E7BD42;
+  border-color: @emphasisColor;
   text-align: center;
   font-size: 90px;
   display: inline-block;
   vertical-align: middle;
   margin: 15px;
-  font-family: serif;
   }
 
 button {
@@ -26,6 +27,21 @@ button {
   width: 150px;
   margin: 25px;
   font-size: 25px;
-  background-color: #E7BD42;
+  background-color: @emphasisColor;
+}
+
+img.gameSquare {
+  background: url('/images/sprite.jpg');
+  height:@gameSquareSize;
+  width:@gameSquareSize;
+  background-size: 3 * @gameSquareSize @gameSquareSize;
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  &.player1 {
+    background-position: -1 * @gameSquareSize 0;
+  }
+  &.player2 {
+    background-position: -2 * @gameSquareSize 0;
+  }
 }
 
