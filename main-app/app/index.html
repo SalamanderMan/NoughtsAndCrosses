@@ -29,11 +29,14 @@
                 <td><game-square squareNumber="8"/></td>
             </tr>
         </table>
+        <player-selection playerNumber="1" ></player-selection>
+        <player-selection playerNumber="2" ></player-selection>
 
-            <button ng-click="newGame()">New Game</button>
-            <button ng-click="togglePlayerChoice1()">Player 1 is {{gameModel.player1}}</button>
-            <button ng-click="togglePlayerChoice2()">Player 2 is {{gameModel.player2}}</button>
+        <button ng-click="newGame()">New Game</button>
+
     </div>
+
+
 </div>
 
 <script src="scripts/built.js"></script>

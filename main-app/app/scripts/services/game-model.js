@@ -39,7 +39,7 @@
                 var me = this;
                 gameApi.newGame(me.player1, me.player2)
                     .then(function (data) {
-                        console.log('Feckin perkele');
+
 
                         me.setStartingPlayer();
                         me.gameState = data.gameboard;

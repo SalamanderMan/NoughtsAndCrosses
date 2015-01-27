@@ -3,7 +3,7 @@
     angular.module('noughtsAndCrossesApp')
         .service('gameApi', function ($http, $q) {
 
-            //TODO: Sort this out......
+
 
             var ServerCallInformation = function (url, data) {
                 this.method = 'post';
@@ -17,7 +17,7 @@
                 var deferred = $q.defer();
                 $http(serverCallInformation)
                     .success(function (data) {
-                        //TODO: pre-convert the data
+
                         deferred.resolve(data);
                     })
                     .error(function (data, status) {

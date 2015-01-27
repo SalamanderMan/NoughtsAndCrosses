@@ -1,5 +1,6 @@
 @gameSquareSize: 150px;
 @emphasisColor: #E7BD42;
+@playerSelectionSize: 150px;
 
 * {
   font-family: Arial, Helvetica, sans-serif;
@@ -42,6 +43,25 @@ img.gameSquare {
   }
   &.player2 {
     background-position: -2 * @gameSquareSize 0;
+  }
+}
+
+/*img.playerType1 {
+
+}*/
+
+img.playerSelection {
+  background: url('/images/player-sprite.jpg');
+  height: @playerSelectionSize;
+  width: @playerSelectionSize;
+  background-size: 3 * @playerSelectionSize @playerSelectionSize;
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  &.pre-trained {
+    background-position:  -1 * @playerSelectionSize 0;
+  }
+  &.random {
+    background-position:  -2 * @playerSelectionSize 0;
   }
 }
 
