@@ -40,7 +40,7 @@
             this.newGame = function () {
 
                 me.updateGameBoard (gameApi.newGame(me.player1, me.player2));
-
+                me.setStartingPlayer();
             };
 
             this.makeMove = function (squareNumber) {
