@@ -10,6 +10,8 @@
             this.player2 = 'random';
             this.currentPlayer = 1;
 
+            var me = this;
+
             var cyclePlayerChoice = function (currentPlayer) {
                 if (currentPlayer === 'human') {
                     return 'random';
@@ -36,23 +38,20 @@
             };
 
             this.newGame = function () {
-                var me = this;
-                gameApi.newGame(me.player1, me.player2)
-                    .then(function (data) {
 
-
-                        me.setStartingPlayer();
-                        me.gameState = data.gameboard;
-                    },
-                    function (data, status) {
-                        alert('Server Error:' + status + ' information ' + data);
-                    });
+                me.updateGameBoard (gameApi.newGame(me.player1, me.player2));
+                me.setStartingPlayer();
             };
 
             this.makeMove = function (squareNumber) {
-                var me = this;
-                gameApi.makeMove(me.currentPlayer, squareNumber)
-                    .then(function (data) {
+
+                me.updateGameBoard(gameApi.makeMove(me.currentPlayer, squareNumber));
+
+            };
+
+            this.updateGameBoard = function (promise) {
+
+                promise.then(function (data) {
                         me.toggleCurrentPlayer();
                         me.gameState = data.gameboard;
                     },
@@ -62,14 +61,14 @@
             };
 
             this.togglePlayerChoice1 = function () {
-                var me = this;
+
                 me.player1 = cyclePlayerChoice(me.player1);
 
             };
 
 
             this.togglePlayerChoice2 = function () {
-                var me = this;
+
                 me.player2 = cyclePlayerChoice(me.player2);
 
             };
