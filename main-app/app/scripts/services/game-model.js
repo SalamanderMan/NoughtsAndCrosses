@@ -3,12 +3,13 @@
     angular.module('noughtsAndCrossesApp')
         .service('gameModel', function (gameApi) {
 
-            this.outcome = 'continue';
+            this.outcome = 'draw';
             this.gameState = '000000000';
             this.winner = 0;
             this.player1 = 'human';
             this.player2 = 'random';
             this.currentPlayer = 1;
+            this.winningState = '';
 
             var me = this;
 
@@ -60,7 +61,10 @@
 
                 promise.then(function (data) {
                         me.gameState = data.gameboard;
+                        me.outcome = data.outcome;
+                        me.winner = data.winner;
                         me.toggleCurrentPlayer();
+                        updateWinningState();
                     },
                     function (data, status) {
                         alert('Server Error:' + status + ' information ' + data);
@@ -79,6 +83,17 @@
                 me.player2 = cyclePlayerChoice(me.player2);
 
             };
+
+             var updateWinningState = function () {
+              if (me.outcome === 'Win') {
+                  me.winningState = 'win' + me.winner;
+              } else if (me.outcome === 'Draw') {
+                  me.winningState = 'draw';
+              } else  {
+                  me.winningState = '';
+              }
+            };
+
         });
 })();
 

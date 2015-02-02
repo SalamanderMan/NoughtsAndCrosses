@@ -1,7 +1,7 @@
 @gameSquareSize: 150px;
 @emphasisColor: #E7BD42;
 @playerSelectionSize: 150px;
-
+@winnerSquareSize: 150px;
 * {
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -46,10 +46,6 @@ img.gameSquare {
   }
 }
 
-/*img.playerType1 {
-
-}*/
-
 img.playerSelection {
   background: url('/images/player-sprite.jpg');
   height: @playerSelectionSize;
@@ -63,5 +59,27 @@ img.playerSelection {
   &.random {
     background-position:  -2 * @playerSelectionSize 0;
   }
+}
+
+img.thePodium {
+  display: none;
+  background: url('/images/winner-sprite.jpg');
+height: @winnerSquareSize;
+width: @winnerSquareSize;
+background-size: 3 * @winnerSquareSize @winnerSquareSize;
+background-repeat: no-repeat;
+background-position: -1 * @winnerSquareSize;
+&.draw {
+  display: block;
+}
+&.win1 {
+  display: block;
+  background-position: 0;
+}
+  &.win2{
+    display: block;
+    background-position: -2 * @winnerSquareSize;
+  }
+
 }
 
