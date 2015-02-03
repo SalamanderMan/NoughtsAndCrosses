@@ -17,6 +17,14 @@ module.exports =  {
         }
     },
 
+    audio: {
+        files:'main-app/app/sounds/*.*',
+        tasks:['clean:audio','copy:audio'],
+        options:{
+            spawn:false
+        }
+    },
+
     grunt:{
         files:'.grunt/*.js',
         tasks:['nostart'],
