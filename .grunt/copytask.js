@@ -25,6 +25,13 @@ module.exports =  {
             src:'scripts/*',
             dest: '.build/main-app/scripts',
             expand:true
+        },
+
+        audio:{
+            cwd:'',
+            src:'main-app/app/sounds/*',
+            dest: '.build/',
+            expand: true
         }
 };
 
