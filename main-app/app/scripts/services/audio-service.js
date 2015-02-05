@@ -6,6 +6,11 @@
             var setUpAudioSprite = function(){
                 var document = $document[0];
                 audioElement = document.createElement('audio');
+                var source = document.createElement('source');
+                source.src = 'sounds/audio-sprite.mp3';
+                source.type = 'audio/mpeg';
+                audioElement.appendChild(source);
+                document.body.appendChild(audioElement);
             };
 
             this.newGame = function() {
@@ -17,11 +22,6 @@
             };
 
             var playSprite = function (startTime, duration) {
-                var source = document.createElement('source');
-                source.src = 'sounds/audio-sprite.mp3';
-                source.type = 'audio/mpeg';
-                audioElement.appendChild(source);
-                document.body.appendChild(audioElement);
                 audioElement.currentTime = startTime;
                 setTimeout(function(){
                     audioElement.pause ();
