@@ -3,7 +3,7 @@
     angular.module('noughtsAndCrossesApp')
         .service('gameModel', function (gameApi) {
 
-            this.outcome = 'draw';
+            this.outcome = '';
             this.gameState = '000000000';
             this.winner = 0;
             this.player1 = 'human';
@@ -84,7 +84,7 @@
 
             };
 
-             var updateWinningState = function () {
+            var updateWinningState = function () {
               if (me.outcome === 'Win') {
                   me.winningState = 'win' + me.winner;
               } else if (me.outcome === 'Draw') {
