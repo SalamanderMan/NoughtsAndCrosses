@@ -1,5 +1,5 @@
 (function(){
-    angular.module('noughtsAndCrossesApp')
+    angular.module('tombola.noughtsAndCrossesApp.services.audio')
         .service('audioSprite', function($document) {
             var audioElement;
 

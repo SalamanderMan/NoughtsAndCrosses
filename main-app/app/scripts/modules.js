@@ -1,4 +1,14 @@
-(function () {
-    'use strict';
-    angular.module('noughtsAndCrossesApp',[]);
-}( ));
+angular.module('tombola.noughtsAndCrossesApp.services.audio',[]);
+angular.module('tombola.noughtsAndCrossesApp.services.gameApiProxy',[]);
+angular.module('tombola.noughtsAndCrossesApp.services.gameModel',[]);
+angular.module('tombola.noughtsAndCrossesApp.directives.playerSelection',[]);
+angular.module('tombola.noughtsAndCrossesApp.directives.gameSquare',[]);
+angular.module('tombola.noughtsAndCrossesApp.controller',[]);
+angular.module('tombola.noughtsAndCrossesApp',[
+    'tombola.noughtsAndCrossesApp.services.audio',
+        'tombola.noughtsAndCrossesApp.services.gameApiProxy',
+    'tombola.noughtsAndCrossesApp.services.gameModel',
+    'tombola.noughtsAndCrossesApp.directives.playerSelection',
+    'tombola.noughtsAndCrossesApp.directives.gameSquare',
+        'tombola.noughtsAndCrossesApp.controller'
+]);

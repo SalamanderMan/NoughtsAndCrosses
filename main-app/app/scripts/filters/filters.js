@@ -1,4 +1,4 @@
-angular.module('noughtsAndCrossesApp')
+angular.module('tombola.noughtsAndCrossesApp')
     .filter('playerNumberToGamePiece', function () {
         return function (input) {
             if (input === '1' || input === '2') {
