@@ -14,7 +14,7 @@
             audioSprite.makeMove();
         };
 
-        //TODO: Reinstate :later
+
         $scope.togglePlayerChoice1 = function () {
             gameModel.togglePlayerChoice1();
         };

@@ -1,7 +1,7 @@
 (function () {
     'use strict';
-    angular.module('tombola.noughtsAndCrossesApp.services.gameApiProxy')
-        .service('gameApi', function ($http, $q) {
+    angular.module('tombola.noughtsAndCrossesApp.service')
+        .service('gameApiProxy', function ($http, $q) {
 
 
 

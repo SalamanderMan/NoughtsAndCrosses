@@ -1,7 +1,7 @@
 (function () {
     'use strict';
-    angular.module('tombola.noughtsAndCrossesApp.services.gameModel')
-        .service('gameModel', function (gameApi) {
+    angular.module('tombola.noughtsAndCrossesApp.service')
+        .service('gameModel', function (gameApiProxy) {
 
             this.outcome = '';
             this.gameState = '000000000';
@@ -50,11 +50,11 @@
 
             this.newGame = function () {
                 me.setStartingPlayer();
-                me.updateGameBoard (gameApi.newGame(me.player1, me.player2));
+                me.updateGameBoard (gameApiProxy.newGame(me.player1, me.player2));
             };
 
             this.makeMove = function (squareNumber) {
-                me.updateGameBoard(gameApi.makeMove(me.currentPlayer, squareNumber));
+                me.updateGameBoard(gameApiProxy.makeMove(me.currentPlayer, squareNumber));
             };
 
             this.updateGameBoard = function (promise) {
