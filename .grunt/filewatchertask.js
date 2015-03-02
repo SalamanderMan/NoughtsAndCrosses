@@ -50,7 +50,7 @@ module.exports =  {
     },
 
     angular:{
-        files:'angular/*',
+        files:'/bower_components/angular/*',
         tasks:['nostart'],
         options:{
             spawn:false

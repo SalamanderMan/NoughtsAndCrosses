@@ -14,9 +14,9 @@ module.exports =  {
         },
 
         angular:{
-            cwd:'',
-            src:'angular/*',
-            dest: '.build/main-app/app',
+            cwd:'bower_components/',
+            src:'angular/**',
+            dest: '.build/main-app/app/',
             expand:true
         },
 

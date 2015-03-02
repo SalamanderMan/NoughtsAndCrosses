@@ -1,5 +1,3 @@
-/*(function(){*/
-
 angular.module('tombola.noughtsAndCrossesApp.directive')
     .directive('gameSquare', function  (){
      return {
@@ -8,13 +6,10 @@ angular.module('tombola.noughtsAndCrossesApp.directive')
          transclude: false,
          template:   function(scope, attr) {
 
-             return '<img src="" class="gameSquare {{ gameModel.gameState[' + attr.squarenumber + ']  | playerNumberToGamePiece }}" ng-click="makeMove(' + attr.squarenumber + ')">';
+             return '<img src="" class="gameSquare {{ gameModel.currentGameState[' + attr.squarenumber + ']  | playerNumberToGamePiece }}" ng-click="makeMove(' + attr.squarenumber + ')">';
          },
     };
-    });
-
-
-
+});
 
 angular.module('tombola.noughtsAndCrossesApp.directive')
      .directive('playerSelection', function  (){
@@ -24,8 +19,8 @@ angular.module('tombola.noughtsAndCrossesApp.directive')
          transclude: false,
          template:   function(scope, attr) {
              var playerNumber = attr.playernumber;
-             return '<img src="" class="playerSelection ' + '{{gameModel.player' + playerNumber + '}}' + '" ng-click="togglePlayerChoice' + playerNumber + '()">';
+             return '<img src="" class="playerSelection ' + '{{gameModel.typePlayer' + playerNumber + '}}' + '" ng-click="togglePlayerChoice' + playerNumber + '()">';
          },
     };
-    });
+});
 
