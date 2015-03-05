@@ -5,8 +5,9 @@
         $scope.gameModel = gameModel;
 
         $scope.newGame = function () {
-            gameModel.newGame();
             audioSprite.newGame();
+            gameModel.newGame();
+
         };
 
         $scope.makeMove = function (squareNumber) {

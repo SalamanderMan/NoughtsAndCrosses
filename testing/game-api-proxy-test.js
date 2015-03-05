@@ -1,6 +1,6 @@
 (function () {
     'use strict';
-    describe('Testing of controller', function(){
+    describe('Testing of gameApiProxy', function(){
         var $httpBackend;
         var gameApiProxy;
 

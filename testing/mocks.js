@@ -3,10 +3,15 @@ var mocks = {
     gameApiProxyConstants: {
         newGameUrl : 'fake new game url',
         makeMoveUrl : 'fake make move url',
-        updateGameBoardUI: 'fake updateGameBoardUI function'
+        method: 'post',
+        withCredentials: 'false',
+        contentType: 'plain/text',
+
     },
 
-    gameModelMocks: {
+
+
+    gameModelConstant: {
         currentGameState : 'gameboard',
         gameOutcome : 'gameOutcome',
         gameWinner : '0',
@@ -22,11 +27,30 @@ var mocks = {
         winningState : '',
         togglePlayer1 : 'togglePlayer1',
         togglePlayer2 : 'togglePlayer2'
+
     },
 
-    controllerMocks: {
+
+    gameApiProxyMock : {getResult : function(){ }},
+
+    viewModel: {
+
+
+        serverCall: function(){},
+        newGame: function(){},
+        makeMove: function(){},
+        isNewGame: function(){},
+        cyclePlayerChoice: function(){},
+        swapCurrentPlayer: function(){},
+        setStartingPlayer: function(){},
+        updateGameBoardUI: function(){},
+        togglePlayerChoice1: function(){},
+        togglePlayerChoice2: function(){},
+        updateWinningState: function(){},
+        getLastPlayedBoard: function(){},
 
     }
+
 };
 
 

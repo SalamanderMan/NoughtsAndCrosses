@@ -6,9 +6,9 @@
 
 
             var ServerCallInformation = function (url, data) {
-                this.method = 'post';
-                this.withCredentials = 'true';
-                this.headers = {'content-type': 'application/json'};
+                this.method = gameApiProxyConstants.method;
+                this.withCredentials = gameApiProxyConstants.withCredentials;
+                this.headers = {'content-type': gameApiProxyConstants.contentType};
                 this.data = data;
                 this.url = url;
             };

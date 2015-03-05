@@ -1,15 +1,15 @@
 (function () {
     'use strict';
     angular.module('tombola.noughtsAndCrossesApp.service')
-        .service('gameModel', function (gameApiProxy) {
+        .service('gameModel', function (gameApiProxy, gameModelConstants) {
 
-            this.gameOutcome = 'continue';
-            this.currentGameState = '000000000';
-            this.gameWinner = 0;
-            this.typePlayer1 = 'human';
-            this.typePlayer2 = 'random';
-            this.currentPlayer = 1;
-            this.winningState = 0;
+            this.gameOutcome = gameModelConstants.initialGameOutcome;
+            this.currentGameState = gameModelConstants.initialGameState;
+            this.gameWinner = gameModelConstants.defaultGameWinner;
+            this.typePlayer1 = gameModelConstants.defaultPlayer1Type;
+            this.typePlayer2 = gameModelConstants.defaultPlayer2Type;
+            this.currentPlayer = gameModelConstants.defaultPlayer;
+            this.winningState = '';
 
             var me = this;
 
