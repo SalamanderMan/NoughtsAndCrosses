@@ -11,23 +11,13 @@ var mocks = {
 
 
 
-    gameModelConstant: {
-        currentGameState : 'gameboard',
-        gameOutcome : 'gameOutcome',
-        gameWinner : '0',
-        chosenSquare : 'squareNumber',
-        player1 : 'player1',
-        player2 : 'player2',
-        withCredentials : 'true',
-        playerNumber : 'playerNumber',
-        method : 'post',
-        data: 'data',
-        url: 'url',
-        currentPlayer : '1',
-        winningState : '',
-        togglePlayer1 : 'togglePlayer1',
-        togglePlayer2 : 'togglePlayer2'
-
+    gameModelConstants: {
+        initialGameState : '000000000',
+        initialGameOutcome : 'continue',
+        defaultGameWinner : '0',
+        defaultPlayer : '1',
+        defaultPlayer1Type : 'random',
+        defaultPlayer2Type : 'human'
     },
 
 

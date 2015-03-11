@@ -9,7 +9,7 @@
             this.typePlayer1 = gameModelConstants.defaultPlayer1Type;
             this.typePlayer2 = gameModelConstants.defaultPlayer2Type;
             this.currentPlayer = gameModelConstants.defaultPlayer;
-            this.winningState = '';
+            this.winningState = 'continue';
 
             var me = this;
 
