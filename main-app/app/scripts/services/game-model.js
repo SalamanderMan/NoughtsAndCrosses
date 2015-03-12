@@ -9,7 +9,7 @@
             this.typePlayer1 = gameModelConstants.defaultPlayer1Type;
             this.typePlayer2 = gameModelConstants.defaultPlayer2Type;
             this.currentPlayer = gameModelConstants.defaultPlayer;
-            this.winningState = 'continue';
+            this.winningState = '';
 
             var me = this;
 
@@ -34,7 +34,7 @@
                 if(this.typePlayer1 !=='human') {
                     return;
                 }
-                if(this.typePlayer2 !=='human'){
+                if(this.typePlayer2 !=='human') {
                     return;
                 }
                 this.currentPlayer = this.currentPlayer == 1 ? 2 : 1;
@@ -63,8 +63,8 @@
 
                 promise.then(function (data) {
                         me.currentGameState = data.gameboard;
-                        me.gameOutcome = data.gameOutcome;
-                        me.gameWinner = data.gameWinner;
+                        me.gameOutcome = data.outcome;
+                        me.gameWinner = data.winner;
                         me.swapCurrentPlayer();
                         updateWinningState();
                     },

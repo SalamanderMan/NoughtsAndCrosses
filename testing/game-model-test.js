@@ -161,10 +161,6 @@
             expect(gameModel.currentPlayer).to.equal(2)
         });
 
-        it('Check the currentGameState upon a win by player1', function(){
-           gameModel.gameWinner = '1';
-            expect(gameModel.gameOutcome).to.equal('win');
-        });
 
     });
 }());
