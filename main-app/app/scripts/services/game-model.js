@@ -27,7 +27,7 @@
                 return 'human';
             };
 
-            this.swapCurrentPlayer = function () {
+             this.swapCurrentPlayer = function () {
                 if(isNewGame()) {
                     return;
                 }
@@ -57,6 +57,7 @@
             this.makeMove = function (squareNumber) {
                 var promise = gameApiProxy.makeMove(me.currentPlayer, squareNumber);
                 me.updateGameBoardUI(promise);
+
             };
 
             this.updateGameBoardUI = function (promise) {

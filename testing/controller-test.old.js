@@ -41,6 +41,7 @@
         it('Check makeMove calls the viewModel update', function(){
             viewModelMock.expects('makeMove').once();
             scope.makeMove();
+
         });
 
         afterEach(function(){
@@ -50,4 +51,4 @@
         });
 
     })
-});
+}());

@@ -1,6 +1,6 @@
 (function () {
-    angular.module('tombola.noughtsAndCrossesApp.controller')
-    .controller('tombola.noughtsAndCrossesApp.controller', function ($scope, $http, gameModel, audioSprite) {
+    angular.module('tombola.noughtsAndCrossesApp.controllers')
+    .controller('noughtsAndCrossesController', function ($scope, $http, gameModel, audioSprite) {
 
         $scope.gameModel = gameModel;
 
