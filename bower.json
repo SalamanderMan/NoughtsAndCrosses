@@ -1,0 +1,26 @@
+{
+  "name": "NoughtsAndCrosses",
+  "version": "0.0.0",
+  "homepage": "https://github.com/SalamanderMan/NoughtsAndCrosses",
+  "authors": [
+    "SalamanderMan"
+  ],
+  "description": "XOX",
+  "keywords": [
+    "XOX"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.3.13"
+  },
+  "devDependencies": {
+    "angular-mocks": "~grunt
+  }
+}

@@ -1,20 +1,20 @@
 (function () {
     'use strict';
     angular.module('tombola.noughtsAndCrossesApp.service')
-        .service('gameModel', function (gameApiProxy) {
+        .service('gameModel', function (gameApiProxy, gameModelConstants) {
 
-            this.outcome = '';
-            this.gameState = '000000000';
-            this.winner = 0;
-            this.player1 = 'human';
-            this.player2 = 'random';
-            this.currentPlayer = 1;
+            this.gameOutcome = gameModelConstants.initialGameOutcome;
+            this.currentGameState = gameModelConstants.initialGameState;
+            this.gameWinner = gameModelConstants.defaultGameWinner;
+            this.typePlayer1 = gameModelConstants.defaultPlayer1Type;
+            this.typePlayer2 = gameModelConstants.defaultPlayer2Type;
+            this.currentPlayer = gameModelConstants.defaultPlayer;
             this.winningState = '';
 
             var me = this;
 
             var isNewGame = function(){
-                return me.gameState ==='000000000';
+                return me.currentGameState ==='000000000';
             };
 
             var cyclePlayerChoice = function (currentPlayer) {
@@ -27,43 +27,45 @@
                 return 'human';
             };
 
-            this.toggleCurrentPlayer = function () {
+            this.swapCurrentPlayer = function () {
                 if(isNewGame()) {
                     return;
                 }
-                if(this.player1 !=='human') {
+                if(this.typePlayer1 !=='human') {
                     return;
                 }
-                if(this.player2 !=='human'){
+                if(this.typePlayer2 !=='human') {
                     return;
                 }
                 this.currentPlayer = this.currentPlayer == 1 ? 2 : 1;
             };
 
             this.setStartingPlayer = function () {
-                if (this.player1 === 'human') {
+                if (this.typePlayer1 === 'human') {
                     this.currentPlayer = 1;
-                } else if (this.player2 === 'human') {
+                } else if (this.typePlayer2 === 'human') {
                     this.currentPlayer = 2;
                 }
             };
 
             this.newGame = function () {
                 me.setStartingPlayer();
-                me.updateGameBoard (gameApiProxy.newGame(me.player1, me.player2));
+                var promise = gameApiProxy.newGame(me.typePlayer1, me.typePlayer2);
+                me.updateGameBoardUI (promise);
             };
 
             this.makeMove = function (squareNumber) {
-                me.updateGameBoard(gameApiProxy.makeMove(me.currentPlayer, squareNumber));
+                var promise = gameApiProxy.makeMove(me.currentPlayer, squareNumber);
+                me.updateGameBoardUI(promise);
             };
 
-            this.updateGameBoard = function (promise) {
+            this.updateGameBoardUI = function (promise) {
 
                 promise.then(function (data) {
-                        me.gameState = data.gameboard;
-                        me.outcome = data.outcome;
-                        me.winner = data.winner;
-                        me.toggleCurrentPlayer();
+                        me.currentGameState = data.gameboard;
+                        me.gameOutcome = data.outcome;
+                        me.gameWinner = data.winner;
+                        me.swapCurrentPlayer();
                         updateWinningState();
                     },
                     function (data, status) {
@@ -73,21 +75,21 @@
 
             this.togglePlayerChoice1 = function () {
 
-                me.player1 = cyclePlayerChoice(me.player1);
+                me.typePlayer1 = cyclePlayerChoice(me.typePlayer1);
 
             };
 
 
             this.togglePlayerChoice2 = function () {
 
-                me.player2 = cyclePlayerChoice(me.player2);
+                me.typePlayer2 = cyclePlayerChoice(me.typePlayer2);
 
             };
 
             var updateWinningState = function () {
-              if (me.outcome === 'Win') {
-                  me.winningState = 'win' + me.winner;
-              } else if (me.outcome === 'Draw') {
+              if (me.gameOutcome === 'Win') {
+                  me.winningState = 'win' + me.gameWinner;
+              } else if (me.gameOutcome === 'Draw') {
                   me.winningState = 'draw';
               } else  {
                   me.winningState = '';
@@ -96,6 +98,3 @@
 
         });
 })();
-
-
-

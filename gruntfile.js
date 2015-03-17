@@ -6,6 +6,7 @@ var fileWatchTask = require('./.grunt/filewatchertask');
 var lessTask = require('./.grunt/lessTask');
 var expressTask = require('./server/server.js');
 var concatTask = require('./.grunt/concattask.js');
+var karmaTask = require('./.grunt/karmatask.js');
 
 module.exports = function(grunt) {
 
@@ -18,8 +19,8 @@ module.exports = function(grunt) {
         watch: fileWatchTask,
         less: lessTask,
         server: expressTask,
-        concat: concatTask
-
+        concat: concatTask,
+        karma: karmaTask
     });
 
 
@@ -38,7 +39,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-concat');
-
+    grunt.loadNpmTasks('grunt-karma');
 
     grunt.registerTask('nostart',['jshint','clean:all','concat','copy','less' ]);
     grunt.registerTask('default',['nostart','server', 'watch']);

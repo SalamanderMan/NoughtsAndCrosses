@@ -6,7 +6,7 @@ angular.module('tombola.noughtsAndCrossesApp.filter')
             }
             return '';
         };
-    });
+});
 
 
 

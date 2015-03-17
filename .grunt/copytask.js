@@ -8,22 +8,16 @@ module.exports =  {
 
         html:{
             cwd: '',
-            src: 'main-app/app/index.html',
+            src: ['main-app/app/index.html', 'main-app/app/*.ico'],
             dest: '.build/',
             expand:true
+
         },
 
         angular:{
-            cwd:'',
-            src:'angular/*',
-            dest: '.build/main-app/app',
-            expand:true
-        },
-
-        script:{
-            cwd:'',
-            src:'scripts/*',
-            dest: '.build/main-app/scripts',
+            cwd:'bower_components/',
+            src:'angular/**',
+            dest: '.build/main-app/app/',
             expand:true
         },
 
