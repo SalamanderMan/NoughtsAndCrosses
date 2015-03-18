@@ -4,8 +4,8 @@
         var scope;
         var noughtsAndCrossesController;
         var sandbox;
-        var audioSprite;
-        var gameModel;
+        var audioSpriteMock;
+        var gameModelMock;
 
         beforeEach(function(){
             module('tombola.noughtsAndCrossesApp.controllers');
@@ -15,28 +15,38 @@
 
 
             sandbox = sinon.sandbox.create();
-            /*gameModel = sinon.sandbox.mock(gameModel);*/
+            gameModelMock = sinon.sandbox.mock(mocks.gameModelMock);
+            audioSpriteMock = sinon.sandbox.mock(mocks.audioSpriteMock);
+
 
             scope = $rootScope.$new();
 
             noughtsAndCrossesController = $controller('noughtsAndCrossesController',{
                 $scope: scope,
                 gameModel: mocks.gameModelMock,
-                audioSprite: audioSprite
+                audioSprite: mocks.audioSpriteMock,
             });
 
         }));
 
         it('Check newGame calls the viewModel reset', function(){
-            /*noughtsAndCrossesController.expects('newGame').once();*/
-            /*scope.newGame();*/
+            gameModelMock.expects('togglePlayerChoice1')
+                .once();
             scope.togglePlayerChoice1();
+
+        });
+
+        it('Check newGame calls the viewModel reset', function(){
+            gameModelMock.expects('togglePlayerChoice2')
+                .once();
+            scope.togglePlayerChoice2();
+
         });
 
         afterEach(function(){
             scope.$digest();
-
-            /*sandbox.restore();*/
+            gameModelMock.verify();
+            sandbox.restore();
         });
 
     })

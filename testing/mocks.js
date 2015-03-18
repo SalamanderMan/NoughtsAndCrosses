@@ -39,7 +39,11 @@ var mocks = {
         updateWinningState: function(){},
         getLastPlayedBoard: function(){},
 
-    }
+    },
+
+    audioSpriteMock : {
+
+    },
 
 };
 
