@@ -23,7 +23,7 @@ var mocks = {
 
     gameApiProxyMock : {getResult : function(){ }},
 
-    viewModel: {
+    gameModelMock: {
 
 
         serverCall: function(){},
