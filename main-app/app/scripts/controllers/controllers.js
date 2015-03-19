@@ -15,7 +15,6 @@
             audioSprite.makeMove();
         };
 
-
         $scope.togglePlayerChoice1 = function () {
             gameModel.togglePlayerChoice1();
         };

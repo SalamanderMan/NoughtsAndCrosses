@@ -27,17 +27,17 @@
                 return 'human';
             };
 
-             this.swapCurrentPlayer = function () {
+             var swapCurrentPlayer = function () {
                 if(isNewGame()) {
                     return;
                 }
-                if(this.typePlayer1 !=='human') {
+                if(me.typePlayer1 !=='human') {
                     return;
                 }
-                if(this.typePlayer2 !=='human') {
+                if(me.typePlayer2 !=='human') {
                     return;
                 }
-                this.currentPlayer = this.currentPlayer == 1 ? 2 : 1;
+                me.currentPlayer = me.currentPlayer == 1 ? 2 : 1;
             };
 
             this.setStartingPlayer = function () {
@@ -66,7 +66,7 @@
                         me.currentGameState = data.gameboard;
                         me.gameOutcome = data.outcome;
                         me.gameWinner = data.winner;
-                        me.swapCurrentPlayer();
+                        swapCurrentPlayer();
                         updateWinningState();
                     },
                     function (data, status) {

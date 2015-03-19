@@ -29,18 +29,23 @@
 
         }));
 
-        it('Check newGame calls the viewModel reset', function(){
+        it('Check the status of togglePlayerChoice1 in the controller, function should only be called once upon execution, resulting in interaction between script and user interface', function(){
             gameModelMock.expects('togglePlayerChoice1')
                 .once();
             scope.togglePlayerChoice1();
-
         });
 
-        it('Check newGame calls the viewModel reset', function(){
+        it('Check the status of togglePlayerChoice1 in the controller, function should only be called once upon execution, resulting in interaction between script and user interface', function(){
             gameModelMock.expects('togglePlayerChoice2')
                 .once();
             scope.togglePlayerChoice2();
+        });
 
+        it('Check the functionality of the makeMove controller, audioSprite should execute upon execution of makeMove function', function(){
+            gameModelMock.expects('newGame');
+            audioSpriteMock.expects('newGame')
+                .once();
+            scope.newGame();
         });
 
         afterEach(function(){
