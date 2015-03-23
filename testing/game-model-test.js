@@ -80,12 +80,7 @@
             expect(gameModel.typePlayer2).to.equal('human');
         });
 
-        it('Check currentPlayer after swapCurrentPlayer for a human versus random game', function(){
-            gameModel.swapCurrentPlayer();
-            expect(gameModel.currentPlayer).to.equal('1');
-        });
-
-        it('Check current after swapCurrentPlayer for a human versus human game', function(){
+        /*it('Check current after swapCurrentPlayer for a human versus human game', function(){
             gameModel.player1 = 'human';
             gameModel.player2 = 'human';
             gameModel.currentPlayer = 1;
@@ -147,7 +142,7 @@
             gameModel.currentPlayer = 1;
             gameModel.swapCurrentPlayer();
             expect(gameModel.currentPlayer).to.equal(1);
-        });
+        });*/
 
         it('Check currentPlayer corresponds to the alteration in typePlayer2', function(){
             gameModel.typePlayer1 = 'human';
