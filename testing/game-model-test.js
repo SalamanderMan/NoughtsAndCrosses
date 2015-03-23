@@ -144,14 +144,12 @@
             expect(gameModel.currentPlayer).to.equal(1);
         });*/
 
-        it('Check currentPlayer corresponds to the alteration in typePlayer2', function(){
-            gameModel.typePlayer1 = 'human';
+        it('Check currentPlayer corresponds to the altercation correctly', function(){
             gameModel.currentPlayer = 1;
             expect(gameModel.currentPlayer).to.equal(1)
         });
 
-        it('Check currentPlayer corresponds to the alteration in typePlayer1', function(){
-            gameModel.typePlayer2 = 'human';
+        it('Check currentPlayer corresponds to the altercation correctly', function(){
             gameModel.currentPlayer = 2;
             expect(gameModel.currentPlayer).to.equal(2)
         });
