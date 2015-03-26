@@ -41,13 +41,14 @@
             scope.togglePlayerChoice2();
         });
 
-        /*it('Check the functionality of the makeMove controller, audioSprite should execute upon execution of makeMove function', function(){
-            gameModelMock.expects('newGame');
+        it('Check the functionality of the newGame controller, audioSprite should execute upon execution of newGame function', function(){
+            gameModelMock.expects('newGame')
+                .once();
             audioSpriteMock.expects('newGame')
                 .once();
             scope.newGame();
         });
-*/
+
         afterEach(function(){
             scope.$digest();
             gameModelMock.verify();

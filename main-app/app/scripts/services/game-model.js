@@ -13,7 +13,7 @@
 
             var me = this;
 
-            var isNewGame = function(){
+            var gameInPlay = function(){
                 return me.currentGameState ==='000000000';
             };
 
@@ -28,7 +28,8 @@
             };
 
              var swapCurrentPlayer = function () {
-                if(isNewGame()) {
+
+                if(gameInPlay()) {
                     return;
                 }
                 if(me.typePlayer1 !=='human') {

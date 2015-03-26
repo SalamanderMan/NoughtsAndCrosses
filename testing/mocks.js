@@ -31,17 +31,20 @@ var mocks = {
         makeMove: function(){},
         isNewGame: function(){},
         cyclePlayerChoice: function(){},
-        swapCurrentPlayer: function(){},
+       // swapCurrentPlayer: function(){},
         setStartingPlayer: function(){},
         updateGameBoardUI: function(){},
         togglePlayerChoice1: function(){},
         togglePlayerChoice2: function(){},
         updateWinningState: function(){},
         getLastPlayedBoard: function(){},
+        audioSprite: function(){},
 
     },
 
     audioSpriteMock : {
+
+        newGame: function (){},
 
     },
 

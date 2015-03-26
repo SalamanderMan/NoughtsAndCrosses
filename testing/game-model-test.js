@@ -7,7 +7,9 @@
             module('tombola.noughtsAndCrossesApp.service');
             module(function($provide){
                 $provide.constant('gameModelConstants', mocks.gameModelConstants);
-                $provide.value('gameApiProxy', mocks.gameApiProxyMock)
+                $provide.value('gameApiProxy', mocks.gameApiProxyMock);
+
+
             });
             inject(function($injector){
                 gameModel = $injector.get('gameModel');
@@ -78,80 +80,6 @@
             gameModel.typePlayer2 = 'pre-trained';
             gameModel.togglePlayerChoice2();
             expect(gameModel.typePlayer2).to.equal('human');
-        });
-
-        /*it('Check current after swapCurrentPlayer for a human versus human game', function(){
-            gameModel.player1 = 'human';
-            gameModel.player2 = 'human';
-            gameModel.currentPlayer = 1;
-            gameModel.swapCurrentPlayer();
-            expect(gameModel.currentPlayer).to.equal(1);
-        });
-
-        it('Check current after swapCurrentPlayer for a human versus human game', function(){
-            gameModel.player1 = 'human';
-            gameModel.player2 = 'pre-trained';
-            gameModel.currentPlayer = 1;
-            gameModel.swapCurrentPlayer();
-            expect(gameModel.currentPlayer).to.equal(1);
-        });
-
-        it('Check current after swapCurrentPlayer for a random versus human game', function(){
-           gameModel.player1 = 'random';
-            gameModel.player2 = 'human';
-            gameModel.currentPlayer = 2;
-            gameModel.swapCurrentPlayer();
-            expect(gameModel.currentPlayer).to.equal(2);
-        });
-
-        it('Check currentPlayer after swapCurrentPlayer for a random versus human', function(){
-           gameModel.player1 = 'random';
-            gameModel.player2 = 'human';
-            gameModel.currentPlayer = 2;
-            gameModel.swapCurrentPlayer();
-            expect(gameModel.currentPlayer).to.equal(2);
-        });
-
-        it('Check currentPlayer after swapCurrentPlayer for a random versus pre-trained', function(){
-            gameModel.player1 = 'random';
-            gameModel.player2 = 'pre-trained';
-            gameModel.currentPlayer = 1;
-            gameModel.swapCurrentPlayer();
-            expect(gameModel.currentPlayer).to.equal(1);
-        });
-
-        it('Check currentPlayer after swapCurrentPlayer for a pre-trained versus human', function(){
-            gameModel.player1 = 'pre-trained';
-            gameModel.player2 = 'human';
-            gameModel.currentPlayer = 1;
-            gameModel.swapCurrentPlayer();
-            expect(gameModel.currentPlayer).to.equal(1);
-        });
-
-        it('Check currentPlayer after swapCurrentPlayer for a pre-trained versus human', function(){
-            gameModel.player1 = 'pre-trained';
-            gameModel.player2 = 'random';
-            gameModel.currentPlayer = 1;
-            gameModel.swapCurrentPlayer();
-            expect(gameModel.currentPlayer).to.equal(1);
-        });
-
-        it('Check currentPlayer after swapCurrentPlayer for a pre-trained versus human', function(){
-            gameModel.player1 = 'pre-trained';
-            gameModel.player2 = 'pre-trained';
-            gameModel.currentPlayer = 1;
-            gameModel.swapCurrentPlayer();
-            expect(gameModel.currentPlayer).to.equal(1);
-        });*/
-
-        it('Check currentPlayer corresponds to the altercation correctly', function(){
-            gameModel.currentPlayer = 1;
-            expect(gameModel.currentPlayer).to.equal(1)
-        });
-
-        it('Check currentPlayer corresponds to the altercation correctly', function(){
-            gameModel.currentPlayer = 2;
-            expect(gameModel.currentPlayer).to.equal(2)
         });
 
 
