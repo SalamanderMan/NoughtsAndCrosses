@@ -45,6 +45,7 @@ var mocks = {
     audioSpriteMock : {
 
         newGame: function (){},
+        makeMove: function(){},
 
     },
 
