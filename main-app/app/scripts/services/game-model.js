@@ -13,7 +13,7 @@
 
             var me = this;
 
-            var isNewGame = function(){
+            var gameInPlay = function(){
                 return me.currentGameState ==='000000000';
             };
 
@@ -27,17 +27,18 @@
                 return 'human';
             };
 
-            this.swapCurrentPlayer = function () {
-                if(isNewGame()) {
+             var swapCurrentPlayer = function () {
+
+                if(gameInPlay()) {
                     return;
                 }
-                if(this.typePlayer1 !=='human') {
+                if(me.typePlayer1 !=='human') {
                     return;
                 }
-                if(this.typePlayer2 !=='human') {
+                if(me.typePlayer2 !=='human') {
                     return;
                 }
-                this.currentPlayer = this.currentPlayer == 1 ? 2 : 1;
+                me.currentPlayer = me.currentPlayer == 1 ? 2 : 1;
             };
 
             this.setStartingPlayer = function () {
@@ -57,6 +58,7 @@
             this.makeMove = function (squareNumber) {
                 var promise = gameApiProxy.makeMove(me.currentPlayer, squareNumber);
                 me.updateGameBoardUI(promise);
+
             };
 
             this.updateGameBoardUI = function (promise) {
@@ -65,7 +67,7 @@
                         me.currentGameState = data.gameboard;
                         me.gameOutcome = data.outcome;
                         me.gameWinner = data.winner;
-                        me.swapCurrentPlayer();
+                        swapCurrentPlayer();
                         updateWinningState();
                     },
                     function (data, status) {
