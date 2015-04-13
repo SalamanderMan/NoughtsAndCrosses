@@ -1,15 +1,16 @@
-/*
 (function(){
    'use strict';
-    describe('Game square tests', function(){
+    describe('Directive tests', function(){
        var compile;
        var rootScope;
+       var gameSquare;
+       var squareNumber;
 
-        beforeEach(module('tombola.noughtsAndCrossesApp.directive'));
+        /*beforeEach(module('tombola.noughtsAndCrossesApp.directive'));*/
 
         beforeEach(
             module(function($provide){
-                $provide.value('gameSquare', function(value){
+                $provide.value('tombola.noughtsAndCrossesApp.directive' ,'gameSquare', function(value){
                     return value;
                 });
             }));
@@ -19,19 +20,28 @@
             rootScope = $rootScope;
         }));
 
-        */
-/*it('Check the directive works', function(){
-            var directiveElementHtml = '<game-square number="0"></game-square>';
+it('Check the square selection directive works', function(){
+            var directiveElementHtml = '<game-square squareNumber="0"/>';
             var element = compile (directiveElementHtml)(rootScope);
             rootScope.$digest();
 
-            expect(element[0].toString()).to.be.equal('object HTMLElement');
-            expect(element.attr(number)).to.be.equal('0');
-            expect(element[0].children.length).to.equal(1);
-        });*//*
+            expect(element[0].toString()).to.be.equal('[object HTMLElement]');
+            expect(element.attr('squareNumber')).to.be.equal('0');
 
+        });
+
+it('Check the player selection directive works', function(){
+            var directiveElementHtml = '<player-selection playerNumber="1" ></player-selection>';
+            var element = compile (directiveElementHtml)(rootScope);
+            rootScope.$digest();
+
+            expect(element[0].toString()).to.be.equal('[object HTMLElement]');
+            expect(element.attr('playerNumber')).to.be.equal('1');
+
+
+        });
 
     });
 }());
-*/
+
 

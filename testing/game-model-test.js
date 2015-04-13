@@ -82,7 +82,7 @@
             expect(gameModel.typePlayer2).to.equal('human');
         });
 
-
+        it('Check ')
 
     });
 }());
