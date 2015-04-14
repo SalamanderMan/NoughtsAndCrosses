@@ -6,8 +6,6 @@
        var gameSquare;
        var squareNumber;
 
-        /*beforeEach(module('tombola.noughtsAndCrossesApp.directive'));*/
-
         beforeEach(
             module(function($provide){
                 $provide.value('tombola.noughtsAndCrossesApp.directive' ,'gameSquare', function(value){
@@ -27,7 +25,6 @@ it('Check the square selection directive works', function(){
 
             expect(element[0].toString()).to.be.equal('[object HTMLElement]');
             expect(element.attr('squareNumber')).to.be.equal('0');
-
         });
 
 it('Check the player selection directive works', function(){
@@ -37,8 +34,6 @@ it('Check the player selection directive works', function(){
 
             expect(element[0].toString()).to.be.equal('[object HTMLElement]');
             expect(element.attr('playerNumber')).to.be.equal('1');
-
-
         });
 
     });
