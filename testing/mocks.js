@@ -20,11 +20,7 @@ var mocks = {
         defaultPlayer2Type : 'human'
     },
 
-
-    gameApiProxyMock : {getResult : function(){ }},
-
     gameModelMock: {
-
 
         serverCall: function(){},
         newGame: function(){},
