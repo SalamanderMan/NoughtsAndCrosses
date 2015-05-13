@@ -1,8 +1,8 @@
 angular.module('tombola.noughtsAndCrossesApp.service',[]);
-    angular.module('tombola.noughtsAndCrossesApp.directive',[]);
-        angular.module('tombola.noughtsAndCrossesApp.controllers',[]);
-            angular.module('tombola.noughtsAndCrossesApp.filter',[]);
-                angular.module('tombola.noughtsAndCrossesApp',[
+angular.module('tombola.noughtsAndCrossesApp.directive',[]);
+angular.module('tombola.noughtsAndCrossesApp.controllers',[]);
+angular.module('tombola.noughtsAndCrossesApp.filter',[]);
+angular.module('tombola.noughtsAndCrossesApp',[
                 'tombola.noughtsAndCrossesApp.service',
                 'tombola.noughtsAndCrossesApp.directive',
                 'tombola.noughtsAndCrossesApp.controllers',

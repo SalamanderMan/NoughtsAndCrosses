@@ -37,7 +37,6 @@
          expect(gameModel.typePlayer2).to.equal(mocks.gameModelConstants.defaultPlayer2Type);
          });
 
-        //Todo: Test togglePlayer methods
         it('Ensure the typePlayer1 in togglePlayerChoice1 is set to the correct value', function(){
             expect(gameModel.typePlayer1).to.equal('random');
         });

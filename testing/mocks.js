@@ -45,6 +45,16 @@ var mocks = {
 
     },
 
+    directiveMocks : {
+        playerNumberToGamePiece : function(){},
+        playerSelection : function(){},
+        makeMove : function(){},
+        imgSrc : function(){},
+        togglePlayerChoice : function(){}
+    },
+
+    filterMock : function (value) {return value; }
+
 };
 
 
