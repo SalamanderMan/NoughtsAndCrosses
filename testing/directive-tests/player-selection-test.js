@@ -26,23 +26,11 @@
 
             expect(element[0].toString()).to.be.equal('[object HTMLElement]');
             expect(element.attr('playerNumber')).to.be.equal('1');
+            expect(element.attr('src')).to.be('');
+            expect(element.attr('ng-click')).to.be('togglePlayerChoice');
+            expect(element.attr('class')).to.be('playerSelection');
         });
 
-        it('Check the identity of ng-click within the playerSelection directive', function(){
-            var directiveElementHtml = '<player-selection playerNumber="1" ></player-selection>';
-            var element = compile (directiveElementHtml)(rootScope);
-            rootScope.$digest();
 
-            expect(element[0].toString()).to.be.equal('[object HTMLElement]');
-            expect(element.attr('ng-click')).to.be.equal(mocks.directiveMocks.togglePlayerChoice());
-        });
-
-        it('Check the functionality of the img src and class within the squareSelection directive', function(){
-            var directiveElementHtml = '<player-selection playerNumber="1" ></player-selection>';
-            var element = compile (directiveElementHtml)(rootScope);
-            rootScope.$digest();
-            expect(element.attr('img src')).to.be.equal(mocks.directiveMocks.imgSrc());
-
-        });
     });
 }());

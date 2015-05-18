@@ -16,7 +16,7 @@
         }));
 
 
-        it('Check the square selection directive works', function(){
+        it('Check the square selection directive functionality', function(){
             var directiveElementHtml = '<game-square squareNumber="0"/>';
             var element = compile (directiveElementHtml)(rootScope);
             rootScope.$digest();
@@ -25,8 +25,9 @@
             expect(element.attr('squareNumber')).to.be.equal('0');
             expect(element.find('game-square').length).to.equal(0);
             expect(element.attr('ng-click')).to.be.equal('makeMove(0)');
-            expect(element.attr('class')).to.be.equal('gameSquare ');
+            expect(element.attr('class')).to.be.equal('gameSquare');
             expect(element.attr('src')).to.be.equal('');
         });
     });
 }());
+
