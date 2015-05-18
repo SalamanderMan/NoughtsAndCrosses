@@ -50,7 +50,8 @@ var mocks = {
         playerSelection : function(){},
         makeMove : function(){},
         imgSrc : function(){},
-        togglePlayerChoice : function(){}
+        togglePlayerChoice : function(){},
+
     },
 
     filterMock : function (value) {return value; }

@@ -21,12 +21,12 @@
             var element = compile (directiveElementHtml)(rootScope);
             rootScope.$digest();
 
-            expect(element[0].toString()).to.be.equal('[object HTMLImageElement]');
-            expect(element.attr('squareNumber')).to.be.equal('0');
+            expect(element[0].toString()).to.equal('[object HTMLImageElement]');
+            expect(element.attr('squareNumber')).to.equal('0');
             expect(element.find('game-square').length).to.equal(0);
-            expect(element.attr('ng-click')).to.be.equal('makeMove(0)');
-            expect(element.attr('class')).to.be.equal('gameSquare');
-            expect(element.attr('src')).to.be.equal('');
+            expect(element.attr('ng-click')).to.equal('makeMove(0)');
+            expect(element.attr('class')).to.equal('gameSquare');
+            expect(element.attr('src')).to.equal('');
         });
     });
 }());

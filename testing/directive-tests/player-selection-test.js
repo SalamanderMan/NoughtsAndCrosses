@@ -4,7 +4,7 @@
         var compile;
         var rootScope;
 
-
+        beforeEach(module('tombola.noughtsAndCrossesApp.directive'));
 
         beforeEach(
             module(function($provide){
@@ -24,11 +24,11 @@
             var element = compile (directiveElementHtml)(rootScope);
             rootScope.$digest();
 
-            expect(element[0].toString()).to.be.equal('[object HTMLElement]');
+            expect(element[0].toString()).to.be.equal('[object HTMLImageElement]');
             expect(element.attr('playerNumber')).to.be.equal('1');
-            expect(element.attr('src')).to.be('');
-            expect(element.attr('ng-click')).to.be('togglePlayerChoice');
-            expect(element.attr('class')).to.be('playerSelection');
+            expect(element.attr('src')).to.be.equal('');
+            expect(element.attr('ng-click')).to.equal('togglePlayerChoice1()');
+            expect(element.attr('class')).to.be.equal('playerSelection');
         });
 
 
