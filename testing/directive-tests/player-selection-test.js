@@ -31,6 +31,17 @@
             expect(element.attr('class')).to.be.equal('playerSelection');
         });
 
+        it('Check the player selection directive works', function(){
+            var directiveElementHtml = '<player-selection playerNumber="2" ></player-selection>';
+            var element = compile (directiveElementHtml)(rootScope);
+            rootScope.$digest();
+
+            expect(element[0].toString()).to.be.equal('[object HTMLImageElement]');
+            expect(element.attr('playerNumber')).to.be.equal('2');
+            expect(element.attr('src')).to.be.equal('');
+            expect(element.attr('ng-click')).to.equal('togglePlayerChoice2()');
+            expect(element.attr('class')).to.be.equal('playerSelection');
+        });
 
     });
 }());
