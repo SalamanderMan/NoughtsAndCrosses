@@ -20,11 +20,7 @@ var mocks = {
         defaultPlayer2Type : 'human'
     },
 
-
-    gameApiProxyMock : {getResult : function(){ }},
-
     gameModelMock: {
-
 
         serverCall: function(){},
         newGame: function(){},
@@ -48,6 +44,17 @@ var mocks = {
         makeMove: function(){},
 
     },
+
+    directiveMocks : {
+        playerNumberToGamePiece : function(){},
+        playerSelection : function(){},
+        makeMove : function(){},
+        imgSrc : function(){},
+        togglePlayerChoice : function(){},
+
+    },
+
+    filterMock : function (value) {return value; }
 
 };
 
