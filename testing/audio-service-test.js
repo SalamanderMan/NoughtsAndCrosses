@@ -3,7 +3,7 @@
     describe('Audio service functionality', function(){
 
         var document = $document;
-        var audioElement = audioElement;
+        var audioSprite = audioSprite;
 
         beforeEach(
             module(function($provide){

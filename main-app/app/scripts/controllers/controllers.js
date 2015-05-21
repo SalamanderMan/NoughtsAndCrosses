@@ -1,18 +1,18 @@
 (function () {
     angular.module('tombola.noughtsAndCrossesApp.controllers')
-    .controller('noughtsAndCrossesController', function ($scope, $http, gameModel, audioSprite) {
+    .controller('noughtsAndCrossesController', function ($scope, $http, gameModel, audioService) {
 
         $scope.gameModel = gameModel;
 
         $scope.newGame = function () {
-            audioSprite.newGame();
+            audioService.newGame();
             gameModel.newGame();
 
         };
 
         $scope.makeMove = function (squareNumber) {
             gameModel.makeMove(squareNumber);
-            audioSprite.makeMove();
+            audioService.makeMove();
         };
 
         $scope.togglePlayerChoice1 = function () {
