@@ -6,7 +6,6 @@ var mocks = {
         method: 'post',
         withCredentials: 'false',
         contentType: 'plain/text',
-
     },
 
 
@@ -21,28 +20,24 @@ var mocks = {
     },
 
     gameModelMock: {
-
-        serverCall: function(){},
         newGame: function(){},
         makeMove: function(){},
-        isNewGame: function(){},
-        cyclePlayerChoice: function(){},
-       // swapCurrentPlayer: function(){},
         setStartingPlayer: function(){},
         updateGameBoardUI: function(){},
         togglePlayerChoice1: function(){},
         togglePlayerChoice2: function(){},
-        updateWinningState: function(){},
-        getLastPlayedBoard: function(){},
         audioSprite: function(){},
-
+        audioService: function(){},
     },
 
     audioSpriteMock : {
-
         newGame: function (){},
         makeMove: function(){},
+    },
 
+    audioServiceMock : {
+        newGame: function (){},
+        makeMove: function(){},
     },
 
     directiveMocks : {
@@ -51,10 +46,13 @@ var mocks = {
         makeMove : function(){},
         imgSrc : function(){},
         togglePlayerChoice : function(){},
-
     },
 
-    filterMock : function (value) {return value; }
+    newGameAudioMocks : {
+        startTime : '2.5'
+    },
+
+    filterMock : function (value) {return value; },
 
 };
 

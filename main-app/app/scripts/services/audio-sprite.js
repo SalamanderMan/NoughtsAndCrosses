@@ -1,7 +1,7 @@
 (function(){
     'use strict';
     angular.module('tombola.noughtsAndCrossesApp.service')
-        .service('audioSprite', function($document) {
+        .service('audioSprite', function($document, $timeout) {
             var audioElement,
                 me = this,
                 setUpAudioSprite = function(){
@@ -13,10 +13,9 @@
             me.playSprite = function (startTime, length) {
                 audioElement[0].currentTime = startTime;
                 audioElement[0].play();
-                setTimeout(function(){
+                $timeout(function(){
                     audioElement[0].pause ();
                 }, length * 1000);
-
             };
             setUpAudioSprite();
         });
