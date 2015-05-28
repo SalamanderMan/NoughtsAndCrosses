@@ -5,10 +5,8 @@ var mocks = {
         makeMoveUrl : 'fake make move url',
         method: 'post',
         withCredentials: 'false',
-        contentType: 'plain/text',
+        contentType: 'plain/text'
     },
-
-
 
     gameModelConstants: {
         initialGameState : '000000000',
@@ -27,32 +25,30 @@ var mocks = {
         togglePlayerChoice1: function(){},
         togglePlayerChoice2: function(){},
         audioSprite: function(){},
-        audioService: function(){},
+        audioService: function(){}
     },
 
     audioSpriteMock : {
         newGame: function (){},
-        makeMove: function(){},
+        makeMove: function(){}
     },
 
     audioServiceMock : {
         newGame: function (){},
-        makeMove: function(){},
+        makeMove: function(){}
     },
 
     directiveMocks : {
         playerNumberToGamePiece : function(){},
-        playerSelection : function(){},
-        makeMove : function(){},
-        imgSrc : function(){},
-        togglePlayerChoice : function(){},
+        makeMove : function(){}
     },
 
     newGameAudioMocks : {
         startTime : '2.5'
     },
 
-    filterMock : function (value) {return value; },
+
+    filterMock : function (value) {return value; }
 
 };
 

@@ -1,9 +1,7 @@
 (function(){
     'use strict';
     describe('Audio service functionality', function(){
-
         var audioService = audioService;
-
 
         beforeEach(
             module(function($provide){
@@ -29,4 +27,4 @@
         });
 
     });
-});
+}());
