@@ -3,8 +3,6 @@
     angular.module('tombola.noughtsAndCrossesApp.service')
         .service('gameApiProxy', function ($http, $q, gameApiProxyConstants) {
 
-
-
             var ServerCallInformation = function (url, data) {
                 this.method = gameApiProxyConstants.method;
                 this.withCredentials = gameApiProxyConstants.withCredentials;
@@ -27,8 +25,6 @@
 
             };
 
-
-
             this.newGame = function (player1, player2) {
 
                 var serverCallInformation = new ServerCallInformation(gameApiProxyConstants.newGameUrl, {
@@ -49,9 +45,6 @@
 
                 return serverCall(serverCallInformation);
 
-            };
-
-
-
-        });
+        };
+    });
 }());

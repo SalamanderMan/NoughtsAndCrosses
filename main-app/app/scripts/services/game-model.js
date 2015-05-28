@@ -81,7 +81,6 @@
 
             };
 
-
             this.togglePlayerChoice2 = function () {
 
                 me.typePlayer2 = cyclePlayerChoice(me.typePlayer2);

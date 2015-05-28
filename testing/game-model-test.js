@@ -9,7 +9,6 @@
                 $provide.constant('gameModelConstants', mocks.gameModelConstants);
                 $provide.value('gameApiProxy', mocks.gameApiProxyMock);
 
-
             });
             inject(function($injector){
                 gameModel = $injector.get('gameModel');
