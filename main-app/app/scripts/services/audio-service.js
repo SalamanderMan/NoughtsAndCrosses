@@ -10,6 +10,5 @@
             this.makeMove = function (){
                 audioSprite.playSprite(0.8, 1);
             };
-
         });
 }());
