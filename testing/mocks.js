@@ -29,8 +29,9 @@ var mocks = {
     },
 
     audioSpriteMock : {
-        newGame: function (){},
-        makeMove: function(){}
+        newGame: function(){},
+        makeMove: function(){},
+        playSprite: function(){}
     },
 
     audioServiceMock : {

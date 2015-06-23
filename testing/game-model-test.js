@@ -7,7 +7,6 @@
             module('tombola.noughtsAndCrossesApp.service');
             module(function($provide){
                 $provide.constant('gameModelConstants', mocks.gameModelConstants);
-                $provide.value('gameApiProxy', mocks.gameApiProxyMock);
 
             });
             inject(function($injector){

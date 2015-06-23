@@ -18,7 +18,7 @@
             sandbox = sinon.sandbox.create();
             gameModelMock = sinon.sandbox.mock(mocks.gameModelMock);
             audioSpriteMock = sinon.sandbox.mock(mocks.audioSpriteMock);
-            audioServiceMock = sinon.sandbox.mock(mocks.audioServiceMock)
+            audioServiceMock = sinon.sandbox.mock(mocks.audioServiceMock);
 
 
             scope = $rootScope.$new();

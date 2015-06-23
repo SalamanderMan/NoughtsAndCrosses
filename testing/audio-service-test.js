@@ -1,31 +1,35 @@
 (function(){
     'use strict';
     describe('Audio service functionality', function(){
-        var audioService = audioService;
+        var audioService;
+        var audioSprite;
+        var audioSpriteMock;
+        var sandbox;
 
 
-        beforeEach(
+        beforeEach(function(){
+            module('tombola.noughtsAndCrossesApp.service');
+
             module(function($provide){
-                $provide.value('tombola.noughtsAndCrossesApp.service', 'audioService', 'audioSprite', mocks, function(value){
+                $provide.value('tombola.noughtsAndCrossesApp.service', 'audioService', 'audioServiceMock', 'audioSprite', mocks, function(value){
                     return value;
                 });
-                inject(function($injector){
-                    audioService = $injector.get('audioService');
-                });
-            }));
+
+            });
+            inject(function(_audioService_){
+                sandbox = sinon.sandbox.create();
+                audioService = _audioService_;
+                audioSpriteMock = sinon.sandbox.mock(mocks.audioSpriteMock);
+
+            });
+        });
+
 
         it('Ensure the audioService functions have the correct values for the newGame block', function(){
-            audioService.newGame();
-            audioSprite.playSprite();
-
-            expect(audioService.newGame()).to.be.equal('2.5')
+            audioSpriteMock
+                .expects('playSprite')
+                .withArgs('')
+                .once();
         });
-
-        it('Ensure the audioService functions have the correct values for the makeMove block', function(){
-            audioService.makeMove();
-            audioSprite.playSprite();
-            expect(mocks.audioServiceMock.startTime).to.equal('2.5');
-        });
-
     });
 }());
